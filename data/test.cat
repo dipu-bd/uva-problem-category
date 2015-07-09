@@ -1,0 +1,41 @@
+{
+  "name": "Test Category",
+  "note": "This is a test. Only for test purpose.",
+  "problems": [
+    {
+      "pnum": 100,
+      "star": false,
+      "note": "test 1"
+    },
+    {
+      "pnum": 101,
+      "star": false,
+      "note": "test2"
+    },
+    {
+      "pnum": 105,
+      "star": true,
+      "note": "test43"
+    }
+  ],
+  "branches": [
+    {
+      "name": "branch 1",
+      "note": "test 1",
+      "problems": null,
+      "branches": null
+    },
+    {
+      "name": "Branch 2",
+      "note": "test 2",
+      "problems": null,
+      "branches": null
+    },
+    {
+      "name": "branch 4",
+      "note": "test 3",
+      "problems": null,
+      "branches": null
+    }
+  ]
+}

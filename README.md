@@ -38,9 +38,9 @@ The data format for each category file is as following:
 				"note" = "note on this branch",
 				"problems" = 
 				[
-				    { "number" = 111, star = 0, note = "note on this problem" }, 
-				    { "number" = 222, star = 0, note = "note on this problem" }, 
-				    { "number" = 333, star = 1, note = "note on this problem" },
+				    { "pnum" = 111, "star" = 0, "note" = "note on this problem" }, 
+				    { "pnum" = 222, "star" = 0, "note" = "note on this problem" }, 
+				    { "pnum" = 333, "star" = 1, "note" = "note on this problem" },
 					...
 				],
 				"branches" = 
