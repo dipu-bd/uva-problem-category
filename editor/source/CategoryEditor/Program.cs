@@ -11,6 +11,10 @@ namespace CategoryEditor
         [STAThread]
         static void Main()
         {
+            //downloadCPBook(1);
+            //downloadCPBook(2);
+            //downloadCPBook(3);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
@@ -21,7 +25,7 @@ namespace CategoryEditor
         static void downloadCPBook(int ed)
         {
             string url = "http://uhunt.felix-halim.net/api/cpbook/" + ed.ToString();
-            string path = @"J:\Projects\GitHub\uva-problem-category\data\cpbook" + ed.ToString() + ".cat";
+            string path = @"J:\Projects\GitHub\uva-problem-category\data\CP Book" + ed.ToString() + ".cat";
 
             //download data
             Console.WriteLine("Downloading \"" + url + "\" ...");
@@ -35,17 +39,17 @@ namespace CategoryEditor
 
             //build category branch
             Console.WriteLine("Building ...");
-            CategoryBranch cb = new CategoryBranch();
+            CategoryNode cb = new CategoryNode();
             cb.name = "Context Programming Book " + ed.ToString();
             cb.note = "Contains category description from uHunt server";
-            cb.branches = new System.Collections.Generic.List<CategoryBranch>();
+            cb.branches = new System.Collections.Generic.List<CategoryNode>();
 
             //getting top branches
             foreach (var o in (Newtonsoft.Json.Linq.JArray)alldat)
             {
                 //add new branch
-                CategoryBranch b1 = new CategoryBranch();
-                b1.branches = new System.Collections.Generic.List<CategoryBranch>();
+                CategoryNode b1 = new CategoryNode();
+                b1.branches = new System.Collections.Generic.List<CategoryNode>();
                 cb.branches.Add(b1);
                 //extract name of the branch
                 b1.name = o.Value<string>("title");
@@ -53,8 +57,8 @@ namespace CategoryEditor
                 foreach (var o2 in o.Value<Newtonsoft.Json.Linq.JArray>("arr"))
                 {
                     //add new branch
-                    CategoryBranch b2 = new CategoryBranch();
-                    b2.branches = new System.Collections.Generic.List<CategoryBranch>();
+                    CategoryNode b2 = new CategoryNode();
+                    b2.branches = new System.Collections.Generic.List<CategoryNode>();
                     b1.branches.Add(b2);
                     //extract name of the branch
                     b2.name = o2.Value<string>("title");
@@ -62,7 +66,7 @@ namespace CategoryEditor
                     foreach (var o3 in o2.Value<Newtonsoft.Json.Linq.JArray>("arr"))
                     {
                         //add new branch
-                        CategoryBranch b3 = new CategoryBranch();
+                        CategoryNode b3 = new CategoryNode();
                         b3.problems = new System.Collections.Generic.List<CategoryProblem>();
                         b2.branches.Add(b3);
                         //extract name  

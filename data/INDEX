@@ -1,6 +1,14 @@
 [
-  "cpbook1.cat",
-  "cpbook2.cat",
-  "cpbook3.cat",
-  "test.cat"
+  {
+    "file": "CP Book1.cat",
+    "ver": 4
+  },
+  {
+    "file": "CP Book2.cat",
+    "ver": 2
+  },
+  {
+    "file": "CP Book3.cat",
+    "ver": 2
+  }
 ]

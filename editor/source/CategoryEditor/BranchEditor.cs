@@ -10,7 +10,7 @@ namespace CategoryEditor
 {
     public partial class BranchEditor : Form
     {
-        public BranchEditor(CategoryBranch branch = null)
+        public BranchEditor(CategoryNode branch = null)
         {
             InitializeComponent();
 
@@ -18,7 +18,7 @@ namespace CategoryEditor
             {
                 this.Text = "Add Branch";
                 okButton.Text = "Add";
-                branch = new CategoryBranch("New Branch");
+                branch = new CategoryNode("New Branch");
             }
 
             Branch = branch;
@@ -26,7 +26,7 @@ namespace CategoryEditor
             noteTextBox.Text = branch.note;
         }
 
-        public CategoryBranch Branch { get; set; }
+        public CategoryNode Branch { get; set; }
 
         private void okButton_Click(object sender, EventArgs e)
         {

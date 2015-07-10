@@ -239,8 +239,7 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Path";
-            this.columnHeader5.Width = 180;
+            this.columnHeader5.Text = "Version";
             // 
             // imageList1
             // 

@@ -17,20 +17,29 @@ namespace CategoryEditor
         const string PROB_FOLDER = "pfolder.png";
         const string PROB_NORMAL = "pfile.png";
         const string PROB_STAR = "pstar.png";
-
-        string selectedFile = null;
-        CategoryBranch loadedBranch = null;
-        TreeNode currentNode = null;
+         
+        TreeNode selectedNode = null;
+        CategoryNode selectedBranch = null;
+        CategoryIndex selectedIndex = null;
+        List<CategoryIndex> allIndex = null;
+        bool branchEdited = false;
 
         public MainForm()
         {
             InitializeComponent();
 
             //load default state 
-            loadCategoryList();
-            closeOpenedBranch();
             closeEditing();
+            closeOpenedBranch();
+            loadCategoryList();
             this.WindowState = Properties.Settings.Default.LastWinState;
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnClosing(e);            
+            saveOpenedBranch();
+            saveIndex();
         }
 
         //
@@ -38,12 +47,17 @@ namespace CategoryEditor
         //
         #region Basic functions
 
-        string indexFolder()
+        public static string indexFolder()
         {
             return Path.GetDirectoryName(Properties.Settings.Default.INDEX);
         }
 
-        bool isValidFile(string filename)
+        public static string getCategoryFile(CategoryIndex ci)
+        {
+            return Path.Combine(indexFolder(), ci.file);
+        }
+
+        public static bool isValidFile(string filename)
         {
             if (string.IsNullOrEmpty(filename))
                 return false;
@@ -52,7 +66,7 @@ namespace CategoryEditor
             if (filename.IndexOfAny(invalid) >= 0)
                 return false;
 
-            return !File.Exists(filename);
+            return true;
         }
 
         #endregion
@@ -66,27 +80,19 @@ namespace CategoryEditor
         {
             try
             {
-                string path = indexBox.Text;
-                if (!File.Exists(path))
-                    throw new FileNotFoundException();
+                selectedIndex = null;
+
+                string content = File.ReadAllText(indexBox.Text);
+                allIndex = JsonConvert.DeserializeObject<List<CategoryIndex>>(content);
 
                 fileList.Items.Clear();
-                List<string> data = new List<string>();
-                var arr = Directory.GetFiles(Path.GetDirectoryName(path), "*.cat");
-                foreach (string v in arr)
+                foreach (var v in allIndex)
                 {
-                    string name = Path.GetFileName(v);
                     fileList.Items.Add(getFileListItem(v));
-                    data.Add(name);
                 }
 
                 panel1.Enabled = true;
-                fileList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-                fileList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-
-                //save json data
-                string json = JsonConvert.SerializeObject(data, Formatting.Indented);
-                File.WriteAllText(path, json);
+                fileList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); 
             }
             catch (Exception ex)
             {
@@ -96,13 +102,12 @@ namespace CategoryEditor
             }
         }
 
-        ListViewItem getFileListItem(string path)
+        ListViewItem getFileListItem(CategoryIndex ci)
         {
-            ListViewItem lvi = new ListViewItem(Path.GetFileName(path));
+            ListViewItem lvi = new ListViewItem(Path.GetFileName(ci.file));
             lvi.Name = "file";
-            lvi.SubItems.Add(path);
-            lvi.UseItemStyleForSubItems = false;
-            lvi.SubItems[1].ForeColor = Color.Silver;
+            lvi.SubItems.Add(ci.ver.ToString());
+            lvi.Tag = ci;
             lvi.ImageKey = BIG_FOLDER;
             return lvi;
         }
@@ -110,27 +115,30 @@ namespace CategoryEditor
         //
         // Category Branch
         //
-        void loadCategoryBranch(string filename = null)
+        void loadCategoryBranch(CategoryIndex catIndx)
         {
             try
             {
+                if (selectedIndex == catIndx) return;
+
                 //first close previous branch
                 closeOpenedBranch();
 
                 //open content 
+                string filename = getCategoryFile(catIndx);
                 if (filename == null || !File.Exists(filename)) return;
                 string content = File.ReadAllText(filename);
 
                 //parse data
-                loadedBranch = JsonConvert.DeserializeObject<CategoryBranch>(content);
+                selectedBranch = JsonConvert.DeserializeObject<CategoryNode>(content);
 
                 //load tree
                 loadCategoryTree();
 
                 //set others
-                selectedFile = filename;
+                selectedIndex = catIndx;
                 splitContainer1.Enabled = true;
-                catFileLabel.Text = Path.GetFileName(filename);
+                catFileLabel.Text = string.Format("{0} : Version {1}", catIndx.file, catIndx.ver);
             }
             catch (Exception ex)
             {
@@ -144,7 +152,7 @@ namespace CategoryEditor
         void loadCategoryTree()
         {
             treeView.Nodes.Clear();
-            TreeNode tn = getElement(loadedBranch);
+            TreeNode tn = getElement(selectedBranch);
             tn.NodeFont = new System.Drawing.Font("Segoe UI Semibold", 10F);
             tn.ImageKey = tn.SelectedImageKey = ROOT_FOLDER;
             tn.Expand();
@@ -163,7 +171,7 @@ namespace CategoryEditor
             return tn;
         }
 
-        TreeNode getElement(CategoryBranch branch)
+        TreeNode getElement(CategoryNode branch)
         {
             TreeNode tn = new TreeNode();
             tn.Name = "branch";
@@ -195,10 +203,11 @@ namespace CategoryEditor
                 other.Tag = branch.branches;
                 other.ImageKey = other.SelectedImageKey = BRANCH_LIST;
                 other.NodeFont = new System.Drawing.Font("Segoe UI", 9F);
-                foreach (CategoryBranch p in branch.branches)
+                foreach (CategoryNode p in branch.branches)
                 {
                     other.Nodes.Add(getElement(p));
                 }
+                other.Expand();
             }
 
             return tn;
@@ -211,33 +220,40 @@ namespace CategoryEditor
         void loadEditorData(TreeNode tnode)
         {
             try
-            {
-                // clear previous data
-                closeEditing();
-
+            { 
                 //check validity
-                if (tnode.Tag == null)
+                if (tnode == null || tnode.Tag == null)
+                {
+                    closeEditing();
                     return;
+                }
 
                 // Get the node with category branch tag
-                if (tnode.Tag.GetType() == typeof(List<CategoryBranch>)
+                if (tnode.Tag.GetType() == typeof(List<CategoryNode>)
                     || tnode.Tag.GetType() == typeof(List<CategoryProblem>))
                 {
                     tnode = tnode.Parent;
                 }
-                else if (tnode.Tag.GetType() != typeof(CategoryBranch))
+                else if (tnode.Tag.GetType() != typeof(CategoryNode))
                 {
+                    closeEditing();
                     return;
                 }
+                
+                //check if this is already opened
+                if (selectedNode == tnode) return;
 
-                var curCat = (CategoryBranch)tnode.Tag;
+                //close previously opened node
+                closeEditing();
+
+                var curCat = (CategoryNode)tnode.Tag;
                 catnameBox.Text = curCat.name;
                 catnoteBox.Text = curCat.note;
                 loadProblemList(curCat.problems);
                 loadBranchList(curCat.branches);
 
                 //set the current node
-                currentNode = tnode;
+                selectedNode = tnode;
                 splitContainer1.Panel2.Enabled = true;
 
                 //show back button
@@ -262,13 +278,13 @@ namespace CategoryEditor
             }
         }
 
-        void loadBranchList(List<CategoryBranch> branches)
+        void loadBranchList(List<CategoryNode> branches)
         {
             //clear previous items
             branchList.Items.Clear();
             //add all new items
             if (branches == null) return;
-            foreach (CategoryBranch b in branches)
+            foreach (CategoryNode b in branches)
             {
                 branchList.Items.Add(getBranchListItem(b));
             }
@@ -287,7 +303,7 @@ namespace CategoryEditor
             return lvi;
         }
 
-        ListViewItem getBranchListItem(CategoryBranch b)
+        ListViewItem getBranchListItem(CategoryNode b)
         {
             ListViewItem lvi = new ListViewItem(b.name);
             lvi.Name = "branch";
@@ -312,14 +328,7 @@ namespace CategoryEditor
                 string path = indexFolder();
                 if (!Directory.Exists(path)) return;
 
-                List<string> data = new List<string>();
-                var arr = Directory.GetFiles(path, "*" + EXTENSION);
-                foreach (string v in arr)
-                {
-                    data.Add(Path.GetFileName(v));
-                }
-
-                string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+                string json = JsonConvert.SerializeObject(allIndex, Formatting.Indented);
                 File.WriteAllText(indexBox.Text, json);
             }
             catch (Exception ex)
@@ -330,17 +339,15 @@ namespace CategoryEditor
 
         void saveOpenedBranch()
         {
-            if (string.IsNullOrEmpty(selectedFile)
-                || !File.Exists(selectedFile)
-                || branchList == null)
+            if (selectedIndex == null || selectedBranch == null)
             {
                 return;
             }
 
             try
             {
-                string json = JsonConvert.SerializeObject(loadedBranch, Formatting.Indented);
-                File.WriteAllText(selectedFile, json);
+                string json = JsonConvert.SerializeObject(selectedBranch, Formatting.Indented);                
+                File.WriteAllText(getCategoryFile(selectedIndex), json);                 
             }
             catch (Exception ex)
             {
@@ -354,16 +361,23 @@ namespace CategoryEditor
         void closeOpenedBranch()
         {
             closeEditing();
-            selectedFile = null;
-            loadedBranch = null;
+            selectedIndex = null;
+            selectedBranch = null;
             treeView.Nodes.Clear();
             splitContainer1.Enabled = false;
-            catFileLabel.Text = "No Opened Category";
+            catFileLabel.Text = "No Opened Category";            
+            if (branchEdited)
+            {
+                branchEdited = false;
+                selectedIndex.ver++;                
+                saveIndex();
+            }
         }
 
         void closeEditing()
         {
-            currentNode = null;
+            if (branchEdited) saveOpenedBranch();
+            selectedNode = null;
             pathLabel.Text = "...";
             catnameBox.Clear();
             catnoteBox.Clear();
@@ -380,7 +394,7 @@ namespace CategoryEditor
         {
             if (tn.Tag == null || tn.Level == 0) return;
 
-            if (tn.Tag.GetType() == typeof(CategoryBranch))
+            if (tn.Tag.GetType() == typeof(CategoryNode))
             {
                 // show confirm diaglog
                 if (MessageBox.Show("Are you sure to remove this branch and all of its contents?", this.Text,
@@ -389,9 +403,9 @@ namespace CategoryEditor
                     return;
                 }
 
-                if (currentNode == tn) closeEditing();
-                var par = (List<CategoryBranch>)tn.Parent.Tag;
-                par.Remove((CategoryBranch)tn.Tag);
+                if (selectedNode == tn) closeEditing();
+                var par = (List<CategoryNode>)tn.Parent.Tag;
+                par.Remove((CategoryNode)tn.Tag);
             }
             else if (tn.Tag.GetType() == typeof(CategoryProblem))
             {
@@ -439,24 +453,36 @@ namespace CategoryEditor
         private void saveButton_Click(object sender, EventArgs e)
         {
             saveOpenedBranch();
+            saveIndex();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            loadCategoryBranch(selectedFile);
+            loadCategoryBranch(selectedIndex);
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            if (currentNode.Level >= 2)
+            if (selectedNode.Level >= 2)
             {
-                loadEditorData(currentNode.Parent.Parent);
+                loadEditorData(selectedNode.Parent.Parent);
             }
         }
 
         #endregion
 
         #region Category File List
+        
+        //
+        // Add category
+        //
+        private void filenameBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                addButton.PerformClick();
+            }
+        }
 
         private void addButton_Click(object sender, System.EventArgs e)
         {
@@ -467,55 +493,87 @@ namespace CategoryEditor
                 return;
             }
 
-            string fullname = Path.Combine(indexFolder(), name);
-            if (!fullname.EndsWith(EXTENSION))
-                fullname += EXTENSION;
+            if(!name.EndsWith(EXTENSION)) 
+                name += EXTENSION;
 
-            string json = JsonConvert.SerializeObject(new CategoryBranch(name), Formatting.Indented);
-            File.WriteAllText(fullname, json);
+            //check if category index already has similar file
+            foreach(CategoryIndex v in allIndex)
+            {
+                if(v.file == name) 
+                {
+                    MessageBox.Show("Another file exist with same name");
+                    return;
+                }
+            }
 
-            fileList.Items.Add(getFileListItem(fullname));
+            CategoryIndex catInd = new CategoryIndex(name);
+            string fullName = getCategoryFile(catInd);
+            if (!File.Exists(fullName))
+            {                
+                string json = JsonConvert.SerializeObject(new CategoryNode(name), Formatting.Indented);
+                File.WriteAllText(fullName, json);
+            }
+
+            allIndex.Add(catInd);
+            fileList.Items.Add(getFileListItem(catInd));
             fileList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-            fileList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
 
             filenameBox.Clear();
             saveIndex();
         }
 
+        //
+        // File list events
+        //
+        private void fileList_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                editListButton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Delete)
+            {
+                deleteListButton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F5)
+            {
+                loadCategoryList();
+            }
+        }
+
         private void fileList_AfterLabelEdit(object sender, LabelEditEventArgs e)
         {
             e.CancelEdit = true;
-            if (!isValidFile(e.Label))
+            if (!isValidFile(e.Label)) return;
+            
+            var cur = (CategoryIndex)fileList.Items[e.Item].Tag;
+            string oldPath = getCategoryFile(cur);
+
+            string newName = e.Label;
+            if (!newName.EndsWith(EXTENSION)) 
+                newName += EXTENSION;
+
+            if(newName == cur.file) return;
+
+            //check if category index already has similar file            
+            foreach (CategoryIndex v in allIndex)
             {
-                return;
+                if (v.file == newName)
+                {
+                    MessageBox.Show("Another file with same name exist.");
+                    return;
+                }
             }
 
-            string old = fileList.Items[e.Item].SubItems[1].Text;
-            string path = Path.Combine(Path.GetDirectoryName(old), e.Label);
-            if (!path.EndsWith(EXTENSION))
-                path += EXTENSION;
+            cur.file = newName;
+            string newPath = getCategoryFile(cur);
+                        
+            //rename by moving
+            File.Move(oldPath, newPath);
 
-            if (File.Exists(path))
-            {
-                MessageBox.Show("Another file exists with same name");
-                return;
-            }
-
-            //rename
-            File.Move(old, path);
-            fileList.Items[e.Item].SubItems[1].Text = path;
-            fileList.Items[e.Item].SubItems[0].Text = Path.GetFileName(path);
-
-            //save data
+            fileList.Items[e.Item].SubItems[0].Text = cur.file;
+            fileList.Items[e.Item].SubItems[1].Text = cur.ver.ToString();
             saveIndex();
-        }
-
-        private void filenameBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                addButton.PerformClick();
-            }
         }
 
         private void fileList_SelectedIndexChanged(object sender, EventArgs e)
@@ -528,15 +586,19 @@ namespace CategoryEditor
             //display category
             if (sel)
             {
-                loadCategoryBranch(fileList.FocusedItem.SubItems[1].Text);
+                var ci = (CategoryIndex)fileList.FocusedItem.Tag;
+                fileList.FocusedItem.SubItems[1].Text = ci.ver.ToString();
+                loadCategoryBranch(ci);
             }
             else
             {
-                saveOpenedBranch();
                 closeOpenedBranch();
             }
         }
 
+        //
+        // Buttons
+        //
         private void editListButton_Click(object sender, EventArgs e)
         {
             if (fileList.FocusedItem == null) return;
@@ -558,9 +620,10 @@ namespace CategoryEditor
                 }
 
                 // delete
-                string path = fileList.FocusedItem.SubItems[1].Text;
-                if (selectedFile == path) closeOpenedBranch();
-                File.Delete(path);
+                var ci = (CategoryIndex)fileList.FocusedItem.Tag;
+                if (selectedIndex == ci) closeOpenedBranch();                
+                File.Delete(getCategoryFile(ci));
+                allIndex.RemoveAt(fileList.FocusedItem.Index);
                 fileList.FocusedItem.Remove();
 
                 //save data
@@ -573,27 +636,13 @@ namespace CategoryEditor
             }
         }
 
-        private void fileList_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F2)
-            {
-                editListButton.PerformClick();
-            }
-            else if (e.KeyCode == Keys.Delete)
-            {
-                deleteListButton.PerformClick();
-            }
-            else if (e.KeyCode == Keys.F5)
-            {
-                loadCategoryList();
-            }
-        }
-
-
         #endregion
 
-        #region tree view
+        #region Category Branch Viewer
 
+        //
+        // Tree view events
+        //
         private void treeView_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F5)
@@ -610,6 +659,19 @@ namespace CategoryEditor
             }
         }
 
+        private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            bool sel = (treeView.SelectedNode != null);
+            editTreeButton.Enabled = sel;
+            deleteTreeButton.Enabled = sel;
+
+            //load editor data
+            loadEditorData(treeView.SelectedNode);
+        }
+
+        //
+        // Buttons
+        //
         private void reloadTreeButton_Click(object sender, EventArgs e)
         {
             loadCategoryTree();
@@ -631,15 +693,19 @@ namespace CategoryEditor
                     tn.Text = pe.Problem.pnum.ToString();
                     tn.Tag = pe.Problem.note;
                     tn.ImageKey = tn.SelectedImageKey = pe.Problem.star ? PROB_STAR : PROB_NORMAL;
+                    
+                    branchEdited = true;
                 }
             }
-            else if (tag.GetType() == typeof(CategoryBranch)) //branch info
+            else if (tag.GetType() == typeof(CategoryNode)) //branch info
             {
-                var be = new BranchEditor((CategoryBranch)tag);
+                var be = new BranchEditor((CategoryNode)tag);
                 if (be.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     tn.Text = be.Branch.name;
                     tn.Tag = be.Branch.note;
+
+                    branchEdited = true;
                 }
             }
         }
@@ -650,38 +716,34 @@ namespace CategoryEditor
 
             //delete selected node
             deleteNode(treeView.SelectedNode);
-
-            //save data
-            saveOpenedBranch();
-        }
-
-        private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            bool sel = (treeView.SelectedNode != null);
-            editTreeButton.Enabled = sel;
-            deleteTreeButton.Enabled = sel;
-
-            //load editor data
-            loadEditorData(treeView.SelectedNode);
+            
+            branchEdited = true;
         }
 
         #endregion
 
         #region Branch Editor
 
+        //
+        // Category name and notes
+        //
         private void catnameBox_TextChanged(object sender, EventArgs e)
         {
-            if (currentNode == null) return;
+            if (selectedNode == null) return;
             if (string.IsNullOrEmpty(catnameBox.Text)) return;
-            ((CategoryBranch)currentNode.Tag).name = catnameBox.Text;
-            currentNode.Text = catnameBox.Text;
+            ((CategoryNode)selectedNode.Tag).name = catnameBox.Text;
+            selectedNode.Text = catnameBox.Text;
+
+            branchEdited = true;
         }
 
         private void catnoteBox_TextChanged(object sender, EventArgs e)
         {
-            if (currentNode == null) return;
-            ((CategoryBranch)currentNode.Tag).note = catnoteBox.Text;
-            currentNode.ToolTipText = catnoteBox.Text;
+            if (selectedNode == null) return;
+            ((CategoryNode)selectedNode.Tag).note = catnoteBox.Text;
+            selectedNode.ToolTipText = catnoteBox.Text;
+
+            branchEdited = true;
         }
 
         //
@@ -700,7 +762,7 @@ namespace CategoryEditor
         {
             if (e.KeyCode == Keys.F5)
             {
-                loadProblemList(((CategoryBranch)currentNode.Tag).problems);
+                loadProblemList(((CategoryNode)selectedNode.Tag).problems);
             }
             else if (e.KeyCode == Keys.F2)
             {
@@ -717,7 +779,7 @@ namespace CategoryEditor
             ProblemEditor pe = new ProblemEditor();
             if (pe.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                var cur = (CategoryBranch)currentNode.Tag;
+                var cur = (CategoryNode)selectedNode.Tag;
                 if (cur.hasProblem(pe.Problem.pnum))
                 {
                     MessageBox.Show("Problem number is already on the list.");
@@ -729,7 +791,9 @@ namespace CategoryEditor
 
                 //add to list
                 problemList.Items.Add(getProblemListitem(pe.Problem));
-                currentNode.Nodes["p"].Nodes.Add(getElement(pe.Problem));
+                selectedNode.Nodes["p"].Nodes.Add(getElement(pe.Problem));
+
+                branchEdited = true;
             }
         }
 
@@ -742,6 +806,8 @@ namespace CategoryEditor
                 problemList.FocusedItem.Text = pe.Problem.pnum.ToString();
                 problemList.FocusedItem.SubItems[1].Text = pe.Problem.star.ToString();
                 problemList.FocusedItem.SubItems[2].Text = pe.Problem.note;
+
+                branchEdited = true;
             }
         }
 
@@ -760,11 +826,13 @@ namespace CategoryEditor
             //delete
             try
             {
-                var cur = (CategoryBranch)currentNode.Tag;
+                var cur = (CategoryNode)selectedNode.Tag;
                 cur.problems.Remove(p);
                 //delete from list
-                currentNode.Nodes["p"].Nodes.RemoveAt(problemList.FocusedItem.Index);
+                selectedNode.Nodes["p"].Nodes.RemoveAt(problemList.FocusedItem.Index);
                 problemList.FocusedItem.Remove();
+
+                branchEdited = true;
             }
             catch(Exception ex)
             {
@@ -787,7 +855,7 @@ namespace CategoryEditor
         {
             if (e.KeyCode == Keys.F5)
             {
-                loadBranchList(((CategoryBranch)currentNode.Tag).branches);
+                loadBranchList(((CategoryNode)selectedNode.Tag).branches);
             }
             else if (e.KeyCode == Keys.F2)
             {
@@ -804,7 +872,7 @@ namespace CategoryEditor
             BranchEditor be = new BranchEditor();
             if (be.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                var cur = (CategoryBranch)currentNode.Tag;
+                var cur = (CategoryNode)selectedNode.Tag;
                 if (cur.hasBranch(be.Branch.name))
                 {
                     MessageBox.Show("Another branch with same name is already on the list.");
@@ -812,12 +880,14 @@ namespace CategoryEditor
                 }
 
                 if (cur.branches == null)
-                    cur.branches = new List<CategoryBranch>();
+                    cur.branches = new List<CategoryNode>();
                 cur.branches.Add(be.Branch);
 
                 //add to list 
                 branchList.Items.Add(getBranchListItem(be.Branch));
-                currentNode.Nodes["b"].Nodes.Add(getElement(be.Branch));
+                selectedNode.Nodes["b"].Nodes.Add(getElement(be.Branch));
+
+                branchEdited = true;
             }
         }
 
@@ -826,7 +896,7 @@ namespace CategoryEditor
             if (branchList.FocusedItem == null) return;
             try
             {
-                var p = currentNode.Nodes["b"].Nodes[branchList.FocusedItem.Index];
+                var p = selectedNode.Nodes["b"].Nodes[branchList.FocusedItem.Index];
                 treeView.SelectedNode = p;
                 p.Expand();
             }
@@ -839,7 +909,7 @@ namespace CategoryEditor
         private void deleteBranchButton_Click(object sender, EventArgs e)
         {
             if (branchList.FocusedItem == null) return;
-            var b = (CategoryBranch)branchList.FocusedItem.Tag;
+            var b = (CategoryNode)branchList.FocusedItem.Tag;
 
             //confirm
             if (MessageBox.Show("Are you sure to remove \"" + b.name + "\"?", this.Text,
@@ -851,11 +921,13 @@ namespace CategoryEditor
             //delete
             //try
             {
-                var cur = (CategoryBranch)currentNode.Tag;
+                var cur = (CategoryNode)selectedNode.Tag;
                 cur.branches.Remove(b);
                 //delete from lists
-                currentNode.Nodes["b"].Nodes.RemoveAt(branchList.FocusedItem.Index);
+                selectedNode.Nodes["b"].Nodes.RemoveAt(branchList.FocusedItem.Index);
                 branchList.FocusedItem.Remove();
+
+                branchEdited = true;
             }
            // catch (Exception ex)
             {

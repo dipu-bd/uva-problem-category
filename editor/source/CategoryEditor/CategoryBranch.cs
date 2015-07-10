@@ -7,9 +7,9 @@ namespace CategoryEditor
 {
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
-    public class CategoryBranch
+    public class CategoryNode
     {
-        public CategoryBranch(string name = "", string note = "")
+        public CategoryNode(string name = "", string note = "")
         {
             this.name = name;
             this.note = note;
@@ -18,7 +18,7 @@ namespace CategoryEditor
         public string name { get; set; }
         public string note { get; set; }
         public List<CategoryProblem> problems { get; set; }
-        public List<CategoryBranch> branches { get; set; }
+        public List<CategoryNode> branches { get; set; }
 
         public bool hasProblem(int pnum)
         {
@@ -33,7 +33,7 @@ namespace CategoryEditor
         public bool hasBranch(string title)
         {
             if (branches == null) return false;
-            foreach (CategoryBranch b in branches)
+            foreach (CategoryNode b in branches)
             {
                 if (b.name == title) return true;
             }
