@@ -219,6 +219,7 @@
             this.fileList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileList.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileList.FullRowSelect = true;
+            this.fileList.HideSelection = false;
             this.fileList.LabelEdit = true;
             this.fileList.Location = new System.Drawing.Point(0, 35);
             this.fileList.Name = "fileList";
@@ -229,7 +230,7 @@
             this.fileList.View = System.Windows.Forms.View.Details;
             this.fileList.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.fileList_AfterLabelEdit);
             this.fileList.SelectedIndexChanged += new System.EventHandler(this.fileList_SelectedIndexChanged);
-            this.fileList.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.fileList_PreviewKeyDown);
+            this.fileList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fileList_KeyUp);
             // 
             // columnHeader4
             // 
@@ -336,6 +337,7 @@
             this.treeView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
             this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeView.HideSelection = false;
             this.treeView.ImageIndex = 0;
             this.treeView.ImageList = this.imageList1;
             this.treeView.ItemHeight = 20;
@@ -595,6 +597,7 @@
             this.problemList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.problemList.FullRowSelect = true;
             this.problemList.GridLines = true;
+            this.problemList.HideSelection = false;
             this.problemList.LabelEdit = true;
             this.problemList.Location = new System.Drawing.Point(73, 83);
             this.problemList.Name = "problemList";
@@ -638,6 +641,7 @@
             this.branchList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.branchList.FullRowSelect = true;
             this.branchList.GridLines = true;
+            this.branchList.HideSelection = false;
             this.branchList.LabelEdit = true;
             this.branchList.Location = new System.Drawing.Point(73, 219);
             this.branchList.Name = "branchList";
@@ -754,6 +758,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category Editor";
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

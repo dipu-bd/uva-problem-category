@@ -30,6 +30,7 @@ namespace CategoryEditor
             loadCategoryList();
             closeOpenedBranch();
             closeEditing();
+            this.WindowState = Properties.Settings.Default.LastWinState;
         }
 
         //
@@ -66,6 +67,8 @@ namespace CategoryEditor
             try
             {
                 string path = indexBox.Text;
+                if (!File.Exists(path))
+                    throw new FileNotFoundException();
 
                 fileList.Items.Clear();
                 List<string> data = new List<string>();
@@ -87,6 +90,7 @@ namespace CategoryEditor
             }
             catch (Exception ex)
             {
+                closeOpenedBranch();
                 panel1.Enabled = false;
                 Console.Write(ex.Message + "\r\n" + ex.StackTrace);
             }
@@ -95,6 +99,7 @@ namespace CategoryEditor
         ListViewItem getFileListItem(string path)
         {
             ListViewItem lvi = new ListViewItem(Path.GetFileName(path));
+            lvi.Name = "file";
             lvi.SubItems.Add(path);
             lvi.UseItemStyleForSubItems = false;
             lvi.SubItems[1].ForeColor = Color.Silver;
@@ -149,6 +154,7 @@ namespace CategoryEditor
         TreeNode getElement(CategoryProblem prob)
         {
             TreeNode tn = new TreeNode();
+            tn.Name = "problem";
             tn.Text = prob.pnum.ToString();
             tn.ToolTipText = prob.note;
             tn.Tag = prob;
@@ -160,6 +166,7 @@ namespace CategoryEditor
         TreeNode getElement(CategoryBranch branch)
         {
             TreeNode tn = new TreeNode();
+            tn.Name = "branch";
             tn.Text = branch.name;
             tn.ToolTipText = branch.note;
             tn.Tag = branch;
@@ -170,6 +177,7 @@ namespace CategoryEditor
             if (branch.problems != null)
             {
                 TreeNode prob = tn.Nodes.Add("Problems");
+                prob.Name = "p";
                 prob.Tag = branch.problems;
                 prob.ImageKey = prob.SelectedImageKey = PROB_FOLDER;
                 prob.NodeFont = new System.Drawing.Font("Segoe UI", 9F);
@@ -183,6 +191,7 @@ namespace CategoryEditor
             if (branch.branches != null)
             {
                 TreeNode other = tn.Nodes.Add("Branches");
+                other.Name = "b";
                 other.Tag = branch.branches;
                 other.ImageKey = other.SelectedImageKey = BRANCH_LIST;
                 other.NodeFont = new System.Drawing.Font("Segoe UI", 9F);
@@ -268,6 +277,7 @@ namespace CategoryEditor
         ListViewItem getProblemListitem(CategoryProblem p)
         {
             ListViewItem lvi = new ListViewItem(p.pnum.ToString());
+            lvi.Name = "problem";
             lvi.SubItems.Add(p.star.ToString());
             lvi.SubItems.Add(p.note);
             lvi.UseItemStyleForSubItems = false;
@@ -280,6 +290,7 @@ namespace CategoryEditor
         ListViewItem getBranchListItem(CategoryBranch b)
         {
             ListViewItem lvi = new ListViewItem(b.name);
+            lvi.Name = "branch";
             lvi.SubItems.Add(b.note);
             lvi.UseItemStyleForSubItems = false;
             lvi.SubItems[1].ForeColor = Color.DimGray;
@@ -403,6 +414,11 @@ namespace CategoryEditor
         // Event Methods
         //
         #region Various event methods
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.LastWinState = this.WindowState;
+        }
 
         private void browseButton_Click(object sender, System.EventArgs e)
         {
@@ -557,7 +573,7 @@ namespace CategoryEditor
             }
         }
 
-        private void fileList_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        private void fileList_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2)
             {
@@ -567,7 +583,12 @@ namespace CategoryEditor
             {
                 deleteListButton.PerformClick();
             }
+            else if (e.KeyCode == Keys.F5)
+            {
+                loadCategoryList();
+            }
         }
+
 
         #endregion
 
@@ -653,34 +674,19 @@ namespace CategoryEditor
             if (currentNode == null) return;
             if (string.IsNullOrEmpty(catnameBox.Text)) return;
             ((CategoryBranch)currentNode.Tag).name = catnameBox.Text;
+            currentNode.Text = catnameBox.Text;
         }
 
         private void catnoteBox_TextChanged(object sender, EventArgs e)
         {
             if (currentNode == null) return;
             ((CategoryBranch)currentNode.Tag).note = catnoteBox.Text;
+            currentNode.ToolTipText = catnoteBox.Text;
         }
 
         //
         // Add problem button
         //
-        private void addProbButton_Click(object sender, EventArgs e)
-        {
-            ProblemEditor pe = new ProblemEditor();
-            if (pe.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                var cur = (CategoryBranch)currentNode.Tag;
-                if (cur.hasProblem(pe.Problem.pnum))
-                {
-                    MessageBox.Show("Problem number is already on the list.");
-                    return;
-                }
-                if (cur.problems == null)
-                    cur.problems = new List<CategoryProblem>();
-                cur.problems.Add(pe.Problem);
-                problemList.Items.Add(getProblemListitem(pe.Problem));
-            }
-        }
 
         private void problemList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -703,6 +709,27 @@ namespace CategoryEditor
             else if (e.KeyCode == Keys.Delete)
             {
                 deleteProbButton.PerformClick();
+            }
+        }
+
+        private void addProbButton_Click(object sender, EventArgs e)
+        {
+            ProblemEditor pe = new ProblemEditor();
+            if (pe.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var cur = (CategoryBranch)currentNode.Tag;
+                if (cur.hasProblem(pe.Problem.pnum))
+                {
+                    MessageBox.Show("Problem number is already on the list.");
+                    return;
+                }
+                if (cur.problems == null)
+                    cur.problems = new List<CategoryProblem>();
+                cur.problems.Add(pe.Problem);
+
+                //add to list
+                problemList.Items.Add(getProblemListitem(pe.Problem));
+                currentNode.Nodes["p"].Nodes.Add(getElement(pe.Problem));
             }
         }
 
@@ -731,31 +758,23 @@ namespace CategoryEditor
             }
 
             //delete
-            var cur = (CategoryBranch)currentNode.Tag;
-            cur.problems.Remove(p);
+            try
+            {
+                var cur = (CategoryBranch)currentNode.Tag;
+                cur.problems.Remove(p);
+                //delete from list
+                currentNode.Nodes["p"].Nodes.RemoveAt(problemList.FocusedItem.Index);
+                problemList.FocusedItem.Remove();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message + "\r\n" + ex.StackTrace);
+            }
         }
 
         //
         // Branch list
         // 
-        private void addBranchButton_Click(object sender, EventArgs e)
-        {
-            BranchEditor be = new BranchEditor();
-            if (be.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                var cur = (CategoryBranch)currentNode.Tag;
-                if (cur.hasBranch(be.Branch.name))
-                {
-                    MessageBox.Show("Another branch with same name is already on the list.");
-                    return;
-                }
-                if (cur.branches == null)
-                    cur.branches = new List<CategoryBranch>();
-                cur.branches.Add(be.Branch);
-                //add to list 
-                branchList.Items.Add(getBranchListItem(be.Branch));
-            }
-        }
 
         private void branchList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -780,14 +799,40 @@ namespace CategoryEditor
             }
         }
 
+        private void addBranchButton_Click(object sender, EventArgs e)
+        {
+            BranchEditor be = new BranchEditor();
+            if (be.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var cur = (CategoryBranch)currentNode.Tag;
+                if (cur.hasBranch(be.Branch.name))
+                {
+                    MessageBox.Show("Another branch with same name is already on the list.");
+                    return;
+                }
+
+                if (cur.branches == null)
+                    cur.branches = new List<CategoryBranch>();
+                cur.branches.Add(be.Branch);
+
+                //add to list 
+                branchList.Items.Add(getBranchListItem(be.Branch));
+                currentNode.Nodes["b"].Nodes.Add(getElement(be.Branch));
+            }
+        }
+
         private void editBranchButton_Click(object sender, EventArgs e)
         {
             if (branchList.FocusedItem == null) return;
-            BranchEditor be = new BranchEditor((CategoryBranch)branchList.FocusedItem.Tag);
-            if (be.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                branchList.FocusedItem.Text = be.Branch.name;
-                branchList.FocusedItem.SubItems[1].Text = be.Branch.note;
+                var p = currentNode.Nodes["b"].Nodes[branchList.FocusedItem.Index];
+                treeView.SelectedNode = p;
+                p.Expand();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message + "\r\n" + ex.StackTrace);
             }
         }
 
@@ -797,19 +842,28 @@ namespace CategoryEditor
             var b = (CategoryBranch)branchList.FocusedItem.Tag;
 
             //confirm
-            if (MessageBox.Show("Are you sure to remove " + b.name + "?", this.Text,
+            if (MessageBox.Show("Are you sure to remove \"" + b.name + "\"?", this.Text,
                 MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
             {
                 return;
             }
 
             //delete
-            var cur = (CategoryBranch)currentNode.Tag;
-            cur.branches.Remove(b);
+            //try
+            {
+                var cur = (CategoryBranch)currentNode.Tag;
+                cur.branches.Remove(b);
+                //delete from lists
+                currentNode.Nodes["b"].Nodes.RemoveAt(branchList.FocusedItem.Index);
+                branchList.FocusedItem.Remove();
+            }
+           // catch (Exception ex)
+            {
+               // Console.WriteLine(ex.Message + "\r\n" + ex.StackTrace);
+            }
         }
 
         #endregion
-
-
+        
     }
 }

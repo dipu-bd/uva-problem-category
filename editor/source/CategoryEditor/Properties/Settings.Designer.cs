@@ -34,5 +34,17 @@ namespace CategoryEditor.Properties {
                 this["INDEX"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.Forms.FormWindowState LastWinState {
+            get {
+                return ((global::System.Windows.Forms.FormWindowState)(this["LastWinState"]));
+            }
+            set {
+                this["LastWinState"] = value;
+            }
+        }
     }
 }

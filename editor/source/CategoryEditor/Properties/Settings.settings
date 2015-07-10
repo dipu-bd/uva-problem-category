@@ -5,5 +5,8 @@
     <Setting Name="INDEX" Type="System.String" Scope="User">
       <Value Profile="(Default)">INDEX</Value>
     </Setting>
+    <Setting Name="LastWinState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
