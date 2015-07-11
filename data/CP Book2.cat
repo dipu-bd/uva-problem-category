@@ -1,17 +1,17 @@
 {
   "name": "Context Programming Book 2",
-  "note": "Contains category description from uHunt server.",
-  "problems": null,
+  "note": "Contains category description from uHunt server",
+  "problems": [],
   "branches": [
     {
       "name": "Introduction",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Ad Hoc Problems - Part 1",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Easy",
@@ -103,7 +103,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Game (Card)",
@@ -145,7 +145,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Game (Chess)",
@@ -187,7 +187,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Game (Others)",
@@ -279,7 +279,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Josephus",
@@ -321,7 +321,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Palindrome / Anagram",
@@ -388,14 +388,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Ad Hoc Problems - Part 2",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Interesting Real Life Problems",
@@ -497,7 +497,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Time",
@@ -574,7 +574,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Just Ad Hoc",
@@ -861,7 +861,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -870,12 +870,12 @@
     {
       "name": "Data Structures and Libraries",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Linear Data Structures with Built-in Libraries",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Basic Data Structures",
@@ -1037,7 +1037,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "C++ STL algorithm (Java Collections)",
@@ -1109,7 +1109,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Sorting-related problems",
@@ -1176,7 +1176,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "C++ STL stack (Java Stack)",
@@ -1228,7 +1228,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "C++ STL queue (Java Queue)",
@@ -1260,14 +1260,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Non Linear Data Structures with Built-in Libraries",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "C++ STL priority_queue (Java PriorityQueue)",
@@ -1289,7 +1289,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "C++ STL map/set (Java TreeMap/TreeSet)",
@@ -1396,14 +1396,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Data Structures with Our-Own Libraries",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Graph Data Structures Problems",
@@ -1445,7 +1445,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Union-Find Disjoint Sets",
@@ -1512,7 +1512,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Tree-related Data Structures",
@@ -1564,7 +1564,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -1573,12 +1573,12 @@
     {
       "name": "Problem Solving Paradigms",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Complete Search",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Iterative (The Easier Ones)",
@@ -1760,7 +1760,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Iterative (The More Challenging Ones)",
@@ -1842,7 +1842,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Recursive Backtracking (The Easier Ones)",
@@ -1969,7 +1969,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Recursive Backtracking (The More Challenging Ones)",
@@ -2041,14 +2041,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Dynamic Programming",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Longest Increasing Subsequence (LIS)",
@@ -2105,7 +2105,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Max Sum",
@@ -2157,7 +2157,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "0-1 Knapsack (Subset Sum)",
@@ -2214,7 +2214,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Coin Change (CC)",
@@ -2261,7 +2261,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Traveling Salesman Problem (TSP)",
@@ -2283,7 +2283,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Other Classical Problems",
@@ -2300,7 +2300,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Non Classical (The Easier Ones)",
@@ -2387,14 +2387,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Greedy",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -2556,14 +2556,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Divide and Conquer",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Binary Search",
@@ -2640,7 +2640,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -2649,12 +2649,12 @@
     {
       "name": "Graph",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Graph Traversal",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Just Graph Traversal",
@@ -2726,7 +2726,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Flood Fill/Finding Connected Components",
@@ -2843,7 +2843,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Topological Sort",
@@ -2880,7 +2880,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Bipartite Graph Check",
@@ -2907,7 +2907,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Finding Articulation Points/Bridges",
@@ -2934,7 +2934,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Finding Strongly Connected Components",
@@ -2976,14 +2976,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Minimum Spanning Tree",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -3040,7 +3040,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Variants",
@@ -3112,14 +3112,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Single-Source Shortest Paths (SSSP)",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "On Unweighted Graph: BFS",
@@ -3286,7 +3286,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "On Weighted Graph: Dijkstra's",
@@ -3368,7 +3368,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "On Graph with Negative Weight Cycle: Bellman Ford's",
@@ -3390,14 +3390,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "All-Pairs Shortest Paths",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -3469,7 +3469,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Variants",
@@ -3506,14 +3506,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Maximum Flow",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -3550,7 +3550,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Variants",
@@ -3602,14 +3602,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Special Graph (Directed Acyclic Graph)",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Single-Source Shortest/Longest Paths on DAG",
@@ -3651,7 +3651,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Counting Paths in DAG",
@@ -3698,7 +3698,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Converting General Graph to DAG",
@@ -3780,14 +3780,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Special Graphs (Others)",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Tree",
@@ -3859,7 +3859,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Eulerian Graph",
@@ -3896,7 +3896,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Bipartite Graph",
@@ -3973,7 +3973,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -3982,12 +3982,12 @@
     {
       "name": "Mathematics",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Ad Hoc Mathematics Problems",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "The Simpler Ones",
@@ -4039,7 +4039,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Mathematical Simulation (Brute Force)",
@@ -4151,7 +4151,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Finding Pattern or Formula",
@@ -4238,7 +4238,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Grid",
@@ -4280,7 +4280,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Number Systems or Sequences",
@@ -4372,7 +4372,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Logarithm, Exponentiation, Power",
@@ -4419,7 +4419,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Polynomial",
@@ -4456,7 +4456,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Base Number Variants",
@@ -4488,7 +4488,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Just Ad Hoc",
@@ -4540,14 +4540,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Java BigInteger Class",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Basic Features",
@@ -4649,7 +4649,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Bonus Features",
@@ -4721,14 +4721,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Combinatorics",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Fibonacci Numbers",
@@ -4815,7 +4815,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Binomial Coefficients",
@@ -4862,7 +4862,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Catalan Numbers",
@@ -4889,7 +4889,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Other Combinatorics",
@@ -4986,14 +4986,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Number Theory",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Prime Numbers",
@@ -5105,7 +5105,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "GCD and/or LCM",
@@ -5162,7 +5162,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Factorial",
@@ -5199,7 +5199,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Finding Prime Factors",
@@ -5226,7 +5226,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Working with Prime Factors",
@@ -5298,7 +5298,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Functions involving Prime Factors",
@@ -5365,7 +5365,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Modulo Arithmetic",
@@ -5407,7 +5407,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Extended Euclid",
@@ -5434,7 +5434,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Other Number Theory Problems",
@@ -5481,14 +5481,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Probability Theory",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -5550,14 +5550,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Cycle-Finding",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -5619,14 +5619,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Game Theory",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -5673,14 +5673,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Powers of a (Square) Matrix",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -5702,7 +5702,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -5711,12 +5711,12 @@
     {
       "name": "String Processing",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Ad Hoc String Processing Problems",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Cipher/Encode/Encrypt/Decode/Decrypt",
@@ -5863,7 +5863,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Frequency Counting",
@@ -5920,7 +5920,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Input Parsing",
@@ -6022,7 +6022,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Output Formatting",
@@ -6074,7 +6074,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "String Comparison",
@@ -6121,7 +6121,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Just Ad Hoc",
@@ -6238,14 +6238,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "String Matching",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -6282,7 +6282,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "In 2D Grid",
@@ -6304,14 +6304,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "String Processing with Dynamic Programming",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -6393,14 +6393,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Suffix Trie, Tree, Array",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -6442,7 +6442,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -6451,12 +6451,12 @@
     {
       "name": "(Computational) Geometry",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Basic Geometry",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Points and Lines",
@@ -6578,7 +6578,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Circles (only)",
@@ -6650,7 +6650,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Triangles (plus Circles)",
@@ -6747,7 +6747,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Quadrilaterals",
@@ -6819,7 +6819,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Great-Circle Distance",
@@ -6851,7 +6851,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Other 3D Objects",
@@ -6873,14 +6873,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Polygon",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -6992,14 +6992,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Divide and Conquer",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard",
@@ -7036,7 +7036,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -7045,12 +7045,12 @@
     {
       "name": "More Advanced Topics",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Problem Decomposition",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Two Components - Binary Search the Answer and Other",
@@ -7102,7 +7102,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Two Components - Involving DP 1D Range Sum",
@@ -7134,7 +7134,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Two Components - SSSP and DP",
@@ -7166,7 +7166,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Two Components - Involving Graph",
@@ -7228,7 +7228,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Two Components - Involving Mathematics",
@@ -7260,7 +7260,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Three/More Components",
@@ -7282,14 +7282,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "More Advanced Dynamic Programming",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "DP + bitmask",
@@ -7356,7 +7356,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "The More Challenging Ones",
@@ -7493,14 +7493,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "More Advanced Search",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "A*/IDA*",
@@ -7537,7 +7537,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }

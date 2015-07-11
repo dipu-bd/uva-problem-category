@@ -13,6 +13,8 @@ namespace CategoryEditor
         {
             this.name = name;
             this.note = note;
+            problems = new List<CategoryProblem>();
+            branches = new List<CategoryNode>();
         }
 
         public string name { get; set; }

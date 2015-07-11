@@ -182,7 +182,7 @@ namespace CategoryEditor
             tn.NodeFont = new System.Drawing.Font("Segoe UI", 9F);
 
             //load problems
-            if (branch.problems != null)
+            if (branch.problems != null && branch.problems.Count > 0)
             {
                 TreeNode prob = tn.Nodes.Add("Problems");
                 prob.Name = "p";
@@ -196,7 +196,7 @@ namespace CategoryEditor
             }
 
             //load branches
-            if (branch.branches != null)
+            if (branch.branches != null && branch.branches.Count > 0)
             {
                 TreeNode other = tn.Nodes.Add("Branches");
                 other.Name = "b";

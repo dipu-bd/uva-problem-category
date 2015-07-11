@@ -1,17 +1,17 @@
 {
   "name": "Context Programming Book 1",
-  "note": "Contains category description from uHunt server. ",
-  "problems": null,
+  "note": "Contains category description from uHunt server",
+  "problems": [],
   "branches": [
     {
       "name": "Introduction",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Ad Hoc",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Ad Hoc",
@@ -158,14 +158,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Preview Contest",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Preview",
@@ -227,7 +227,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -236,12 +236,12 @@
     {
       "name": "Data Structures and Libraries",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Data Structures With Built-in Libraries",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Static array, vector, bitset, Direct Addressing Table",
@@ -263,7 +263,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "STL algorithm",
@@ -285,7 +285,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Sorting-related problems",
@@ -317,7 +317,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "STL stack",
@@ -344,7 +344,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "STL queue",
@@ -366,7 +366,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "STL map/set",
@@ -393,7 +393,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "STL priority_queue",
@@ -410,14 +410,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Data Structures With Our-Own Libraries",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Graph (simple ones)",
@@ -434,7 +434,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Union-Find Disjoint Sets",
@@ -481,7 +481,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Segment Tree",
@@ -503,7 +503,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -512,12 +512,12 @@
     {
       "name": "Problem Solving Paradigms",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Dynamic Programming",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Longest Increasing Subsequence (LIS) - Classical",
@@ -574,7 +574,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Coin Change - Classical",
@@ -621,7 +621,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Maximum Sum",
@@ -663,7 +663,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "0-1 Knapsack - Classical",
@@ -685,7 +685,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Non Classical (medium difficulty)",
@@ -727,7 +727,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "DP + Bitmasks",
@@ -754,7 +754,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "DP on 'Graph Problem'",
@@ -781,7 +781,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "DP on Tree",
@@ -798,14 +798,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Complete Search",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Iterative",
@@ -852,7 +852,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Recursive Backtracking",
@@ -909,14 +909,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Divide and Conquer",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Divide and Conquer",
@@ -968,14 +968,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Greedy",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Greedy",
@@ -1027,7 +1027,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -1036,12 +1036,12 @@
     {
       "name": "Graph",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Depth First Search",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Finding Connected Components / Flood Fill",
@@ -1128,7 +1128,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Finding Articulation Points / Bridges",
@@ -1155,7 +1155,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Finding Strongly Connected Components",
@@ -1182,7 +1182,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Topological Sort",
@@ -1209,14 +1209,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Breadth First Search",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "SSSP on Unweighted Graph",
@@ -1353,7 +1353,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Variants",
@@ -1385,14 +1385,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Kruskal's",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard Application (for MST)",
@@ -1439,7 +1439,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Variants",
@@ -1471,14 +1471,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Dijkstra's",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Dijkstra's",
@@ -1530,14 +1530,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Bellman Ford's",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Bellman Ford's",
@@ -1559,14 +1559,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Floyd Warshall's",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard Application (for APSP or SSSP on small graph)",
@@ -1633,7 +1633,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Variants",
@@ -1675,14 +1675,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Ford Fulkerson's / Edmonds Karps's",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Standard Application (for Max Flow/Min Cut)",
@@ -1709,7 +1709,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Variants",
@@ -1741,14 +1741,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Special Graph",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Tree",
@@ -1815,7 +1815,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Single-Source Shortest/Longest Paths in DAG",
@@ -1852,7 +1852,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Counting Paths in DAG",
@@ -1874,7 +1874,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Max Cardinality Bipartite Matching",
@@ -1916,7 +1916,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Max Weighted Independent Set in Bipartite Graph",
@@ -1928,7 +1928,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Max Vertex Cover in Bipartite Graph",
@@ -1940,7 +1940,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -1949,12 +1949,12 @@
     {
       "name": "Mathematics",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Number Theory",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Ad Hoc",
@@ -2016,7 +2016,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Prime Numbers",
@@ -2173,7 +2173,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "GCD/LCM",
@@ -2230,7 +2230,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Euler's Totient (Phi) Function",
@@ -2262,7 +2262,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Extended Euclid",
@@ -2284,7 +2284,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Modulo Arithmetic",
@@ -2321,7 +2321,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Fibonacci Numbers",
@@ -2398,7 +2398,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Factorial",
@@ -2470,7 +2470,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Big Integer (use Java)",
@@ -2542,7 +2542,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Combinatorics",
@@ -2629,7 +2629,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Cycle-Finding",
@@ -2671,14 +2671,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Sequences and Number Systems",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Sequences",
@@ -2715,7 +2715,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Number Systems",
@@ -2787,14 +2787,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Others",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Probability Theory",
@@ -2836,7 +2836,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Linear Algebra",
@@ -2853,7 +2853,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -2862,12 +2862,12 @@
     {
       "name": "String Processing",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Ad Hoc String Processing",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Ad Hoc",
@@ -3029,14 +3029,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "String Processing with DP",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "String Processing with DP",
@@ -3083,14 +3083,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Suffix Array",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Suffix Array",
@@ -3117,7 +3117,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
@@ -3126,12 +3126,12 @@
     {
       "name": "(Computational) Geometry",
       "note": "",
-      "problems": null,
+      "problems": [],
       "branches": [
         {
           "name": "Geometry Basics",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Lines",
@@ -3178,7 +3178,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Circles (only)",
@@ -3220,7 +3220,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Triangles (plus Circles)",
@@ -3287,7 +3287,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Rectangles",
@@ -3329,7 +3329,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Great Circle Distance",
@@ -3361,7 +3361,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Polygons",
@@ -3398,7 +3398,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Other Basic Geometry",
@@ -3430,14 +3430,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Graham's Scan for Convex Hull",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Graham's Scan",
@@ -3494,14 +3494,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Intersection Problems",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Line Segment Intersection",
@@ -3543,7 +3543,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             },
             {
               "name": "Other Objects",
@@ -3605,14 +3605,14 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         },
         {
           "name": "Divide and Conquer Revisited",
           "note": "",
-          "problems": null,
+          "problems": [],
           "branches": [
             {
               "name": "Divide and Conquer Revisited",
@@ -3644,7 +3644,7 @@
                   "note": ""
                 }
               ],
-              "branches": null
+              "branches": []
             }
           ]
         }
