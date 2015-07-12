@@ -169,6 +169,7 @@ namespace CategoryEditor
                 selectedBranch.updateParent();
                 treeList.SetObjects(new CategoryNode[] { selectedBranch });
                 treeList.Expand(selectedBranch);
+                treeList.SelectObject(selectedBranch);
 
                 //set others
                 selectedIndex = catIndx;
@@ -474,6 +475,7 @@ namespace CategoryEditor
             string oldPath = getCategoryFile(oldVal);
             string newPath = getCategoryFile(newVal);
             File.Move(oldPath, newPath);
+            File.Delete(oldPath);
 
             ((CategoryIndex)e.RowObject).file = newVal;
             saveIndex();

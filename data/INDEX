@@ -1,15 +1,15 @@
 [
   {
     "file": "CP Book 1.cat",
-    "ver": 0
-  },
-  {
-    "file": "CP Book 2.cat",
     "ver": 1
   },
   {
+    "file": "CP Book 2.cat",
+    "ver": 2
+  },
+  {
     "file": "CP Book 3.cat",
-    "ver": 0
+    "ver": 1
   },
   {
     "file": "Contest Problems.cat",
