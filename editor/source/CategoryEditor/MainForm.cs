@@ -40,6 +40,7 @@ namespace CategoryEditor
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             base.OnClosing(e);
+            closeOpenedBranch();
             saveOpenedBranch();
             saveIndex();
         }
@@ -115,11 +116,6 @@ namespace CategoryEditor
                     return PROB_STAR;
                 else
                     return PROB_NORMAL;
-            };
-
-            nameCat.ImageGetter = delegate(object data)
-            {
-                return BRANCH_FOLDER;
             };
         }
         #endregion
@@ -284,8 +280,7 @@ namespace CategoryEditor
             pathLabel.Text = "...";
             catnameBox.Clear();
             catnoteBox.Clear();
-            problemListView.ClearObjects();
-            branchListView.ClearObjects();
+            problemListView.SetObjects(null);
             fastColoredTextBox1.Text = "";
             tabControl1.Enabled = false;
             backTableLayout.ColumnStyles[0].Width = 0;
@@ -342,14 +337,42 @@ namespace CategoryEditor
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedTab == tabPage1)
+            if (tabControl1.SelectedTab == wizardTab)
             {
-                saveEditedData();
+                saveEditedData(true);
                 loadBranchWizard();
             }
-            else if (tabControl1.SelectedTab == tabPage2)
+            else if (tabControl1.SelectedTab == editorTab)
             {
                 loadBranchEditor();
+            }
+        }
+
+        private void hideCategoryList_Click(object sender, EventArgs e)
+        {
+            if (hideCategoryList.Text == "<")
+            {
+                hideCategoryList.Text = ">";
+                panel1.Width = 25;
+            }
+            else
+            {
+                hideCategoryList.Text = "<";
+                panel1.Width = 200;
+            }
+        }
+
+        private void hideTreeList_Click(object sender, EventArgs e)
+        {
+            if (hideTreeList.Text == "<")
+            {
+                hideTreeList.Text = ">";
+                splitContainer1.SplitterDistance = 25;
+            }
+            else
+            {
+                hideTreeList.Text = "<";
+                splitContainer1.SplitterDistance = (int)(2 * splitContainer1.Width / 5);
             }
         }
 
@@ -483,7 +506,7 @@ namespace CategoryEditor
         private void editListButton_Click(object sender, EventArgs e)
         {
             if (fileList.SelectedItem == null) return;
-            fileList.SelectedItem.BeginEdit();
+            fileList.StartCellEdit(fileList.SelectedItem, 0);
         }
 
         private void deleteListButton_Click(object sender, EventArgs e)
@@ -555,7 +578,8 @@ namespace CategoryEditor
 
         private void treeList_CellEditFinishing(object sender, BrightIdeasSoftware.CellEditEventArgs e)
         {
-            branchEdited = true;
+            if (!e.Value.Equals(e.NewValue))
+                branchEdited = true;
         }
 
         //
@@ -568,8 +592,13 @@ namespace CategoryEditor
 
         private void editTreeButton_Click(object sender, EventArgs e)
         {
-            if (treeList.SelectedItem == null) return;
-            treeList.SelectedItem.BeginEdit();
+            if (treeList.SelectedObject == null) return;
+            BranchEditor be = new BranchEditor((CategoryNode)treeList.SelectedObject);
+            if (be.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                saveOpenedBranch();
+                reloadTreeButton.PerformClick();
+            }
         }
 
         private void deleteTreeButton_Click(object sender, EventArgs e)
@@ -606,7 +635,6 @@ namespace CategoryEditor
             catnameBox.Text = editingNode.name;
             catnoteBox.Text = editingNode.note;
             problemListView.SetObjects(editingNode.problems);
-            branchListView.SetObjects(editingNode.branches);
         }
 
         //
@@ -617,9 +645,12 @@ namespace CategoryEditor
             if (editingNode == null) return;
             string txt = catnameBox.Text.Trim();
             if (string.IsNullOrEmpty(txt)) return;
-            editingNode.name = txt;
-            treeList.RefreshObject(editingNode);
-            branchEdited = true;
+            if (editingNode.name != txt)
+            {
+                editingNode.name = txt;
+                treeList.RefreshObject(editingNode);
+                branchEdited = true;
+            }
         }
 
         private void catnoteBox_TextChanged(object sender, EventArgs e)
@@ -627,9 +658,12 @@ namespace CategoryEditor
             if (editingNode == null) return;
             string txt = catnoteBox.Text.Trim();
             if (string.IsNullOrEmpty(txt)) return;
-            editingNode.note = txt;
-            treeList.RefreshObject(editingNode);
-            branchEdited = true;
+            if (editingNode.note != txt)
+            {
+                editingNode.note = txt;
+                treeList.RefreshObject(editingNode);
+                branchEdited = true;
+            }
         }
 
         //
@@ -665,9 +699,25 @@ namespace CategoryEditor
 
         private void problemListView_CellEditFinishing(object sender, BrightIdeasSoftware.CellEditEventArgs e)
         {
-            branchEdited = true;
+            if (!e.NewValue.Equals(e.Value))
+                branchEdited = true;
         }
 
+        private void addBatch_Click(object sender, EventArgs e)
+        {
+            ProblemEditor pe = new ProblemEditor(editingNode);
+            if (pe.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                saveOpenedBranch();
+                int last = problemListView.GetItemCount();
+                problemListView.SetObjects(editingNode.problems);
+                if (problemListView.GetItemCount() > 0)
+                {
+                    problemListView.EnsureVisible(last);
+                    problemListView.StartCellEdit(problemListView.GetItem(last), 0);
+                }
+            }
+        }
 
         private void addProbButton_Click(object sender, EventArgs e)
         {
@@ -707,73 +757,6 @@ namespace CategoryEditor
             }
         }
 
-        //
-        // Branch list
-        // 
-
-        private void branchList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            bool sel = (branchListView.SelectedItems.Count != 0);
-            editBranchButton.Enabled = sel;
-            deleteBranchButton.Enabled = sel;
-        }
-
-        private void branchList_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F5)
-            {
-                branchListView.SetObjects(editingNode.branches);
-            }
-            else if (e.KeyCode == Keys.F2)
-            {
-                editBranchButton.PerformClick();
-            }
-            else if (e.KeyCode == Keys.Delete)
-            {
-                deleteBranchButton.PerformClick();
-            }
-            else if (e.KeyCode == Keys.N && e.Control)
-            {
-                addBranchButton.PerformClick();
-            }
-        }
-
-        private void branchListView_CellEditFinishing(object sender, BrightIdeasSoftware.CellEditEventArgs e)
-        {
-            branchEdited = true;
-        }
-
-        private void addBranchButton_Click(object sender, EventArgs e)
-        {
-            BranchEditor be = new BranchEditor(editingNode);
-            if (be.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                //add to list 
-                branchListView.SetObjects(editingNode.branches);
-                branchEdited = true;
-            }
-        }
-
-        private void editBranchButton_Click(object sender, EventArgs e)
-        {
-            if (branchListView.SelectedItem == null) return;
-            branchListView.SelectedItem.BeginEdit();
-        }
-
-        private void deleteBranchButton_Click(object sender, EventArgs e)
-        {
-            if (branchListView.SelectedObject == null) return;
-            var b = (CategoryNode)branchListView.SelectedObject;
-
-            //confirm
-            if (ConfirmDelete())
-            {
-                b.remove();
-                branchListView.SetObjects(editingNode.branches);
-                branchEdited = true;
-            }
-        }
-
         #endregion
 
         #region Branch Editor Box
@@ -784,12 +767,17 @@ namespace CategoryEditor
             fastColoredTextBox1.ClearUndo();
         }
 
-        void saveEditedData()
+        void saveEditedData(bool forced = false)
         {
+            if (tabControl1.SelectedTab != editorTab && !forced)
+            {
+                return;
+            }
+
             try
             {
                 string json = fastColoredTextBox1.Text;
-                
+
                 //check if anything was edited
                 string original = JsonConvert.SerializeObject(editingNode)
                     .Replace("\t", "").Replace("\r", "").Replace("\n", "").Replace(" ", "");

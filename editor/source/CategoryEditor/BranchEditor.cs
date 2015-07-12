@@ -16,6 +16,7 @@ namespace CategoryEditor
             
             this.root = root;
             nameBox.Focus();
+            nodeListView.SetObjects(root.branches);
         }
 
         private CategoryNode root;
@@ -33,12 +34,14 @@ namespace CategoryEditor
             }
 
             root.branches.Add(new CategoryNode(name, note, root));
+            nodeListView.SetObjects(root.branches);
+            nodeListView.EnsureVisible(root.branches.Count - 1);
+
             return true;
         }               
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            if (!addBranch()) return;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
@@ -51,10 +54,12 @@ namespace CategoryEditor
 
         private void addNewButton_Click(object sender, EventArgs e)
         {
-            if (!addBranch()) return;
-            nameBox.Text = "";
-            noteTextBox.Text = "";
-            nameBox.Focus();
+            if (addBranch())
+            {
+                nameBox.Text = "";
+                noteTextBox.Text = "";
+                nameBox.Focus();
+            }
         }
 
         private void nameBox_KeyUp(object sender, KeyEventArgs e)

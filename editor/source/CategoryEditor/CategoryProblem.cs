@@ -34,7 +34,10 @@ namespace CategoryEditor
         /// </summary>
         public void remove()
         {
-            this.parent.problems.Remove(this);
+            if (this.parent != null)
+            {
+                this.parent.problems.Remove(this);
+            }
         }
     }
 }

@@ -47,6 +47,7 @@
             this.editListButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.hideCategoryList = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeList = new BrightIdeasSoftware.TreeListView();
             this.nameTreeCol = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -64,19 +65,16 @@
             this.reloadTreeButton = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.catFileLabel = new System.Windows.Forms.Label();
+            this.hideTreeList = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.wizardTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.deleteBranchButton = new System.Windows.Forms.Button();
-            this.addBranchButton = new System.Windows.Forms.Button();
-            this.editBranchButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.addBatchButton = new System.Windows.Forms.Button();
             this.deleteProbButton = new System.Windows.Forms.Button();
             this.editProbButton = new System.Windows.Forms.Button();
             this.addProbButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.catnameBox = new System.Windows.Forms.TextBox();
             this.catnoteBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -85,10 +83,7 @@
             this.pnumProb = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.starProb = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.noteProb = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.branchListView = new BrightIdeasSoftware.FastObjectListView();
-            this.nameCat = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.noteCat = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.editorTab = new System.Windows.Forms.TabPage();
             this.fastColoredTextBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
             this.backTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.backButton = new System.Windows.Forms.Button();
@@ -109,13 +104,11 @@
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.wizardTab.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.problemListView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.branchListView)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.editorTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).BeginInit();
             this.backTableLayout.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -199,7 +192,7 @@
             // addButton
             // 
             this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addButton.Location = new System.Drawing.Point(118, 47);
+            this.addButton.Location = new System.Drawing.Point(118, 48);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 1;
@@ -246,6 +239,7 @@
             this.fileList.FullRowSelect = true;
             this.fileList.HideSelection = false;
             this.fileList.Location = new System.Drawing.Point(0, 35);
+            this.fileList.MultiSelect = false;
             this.fileList.Name = "fileList";
             this.fileList.ShowGroups = false;
             this.fileList.ShowItemToolTips = true;
@@ -266,8 +260,8 @@
             // fileNameCol
             // 
             this.fileNameCol.AspectName = "file";
-            this.fileNameCol.FillsFreeSpace = true;
             this.fileNameCol.Text = "File Name";
+            this.fileNameCol.Width = 135;
             // 
             // fileVersionCol
             // 
@@ -314,6 +308,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Linen;
             this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.hideCategoryList);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -326,10 +321,21 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 35);
+            this.label2.Size = new System.Drawing.Size(175, 35);
             this.label2.TabIndex = 0;
             this.label2.Text = "Category List";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // hideCategoryList
+            // 
+            this.hideCategoryList.Dock = System.Windows.Forms.DockStyle.Right;
+            this.hideCategoryList.Location = new System.Drawing.Point(175, 0);
+            this.hideCategoryList.Name = "hideCategoryList";
+            this.hideCategoryList.Size = new System.Drawing.Size(25, 35);
+            this.hideCategoryList.TabIndex = 2;
+            this.hideCategoryList.Text = "<";
+            this.hideCategoryList.UseVisualStyleBackColor = true;
+            this.hideCategoryList.Click += new System.EventHandler(this.hideCategoryList_Click);
             // 
             // splitContainer1
             // 
@@ -350,7 +356,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.backTableLayout);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel3);
             this.splitContainer1.Size = new System.Drawing.Size(709, 421);
-            this.splitContainer1.SplitterDistance = 289;
+            this.splitContainer1.SplitterDistance = 283;
             this.splitContainer1.TabIndex = 2;
             // 
             // treeList
@@ -366,11 +372,12 @@
             this.treeList.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeList.HideSelection = false;
             this.treeList.Location = new System.Drawing.Point(0, 35);
+            this.treeList.MultiSelect = false;
             this.treeList.Name = "treeList";
             this.treeList.OwnerDraw = true;
             this.treeList.ShowGroups = false;
             this.treeList.ShowItemToolTips = true;
-            this.treeList.Size = new System.Drawing.Size(289, 356);
+            this.treeList.Size = new System.Drawing.Size(283, 356);
             this.treeList.TabIndex = 20;
             this.treeList.UseCellFormatEvents = true;
             this.treeList.UseCompatibleStateImageBehavior = false;
@@ -458,18 +465,18 @@
             this.panel7.Location = new System.Drawing.Point(0, 391);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(289, 30);
+            this.panel7.Size = new System.Drawing.Size(283, 30);
             this.panel7.TabIndex = 19;
             // 
             // editTreeButton
             // 
             this.editTreeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editTreeButton.Enabled = false;
-            this.editTreeButton.Location = new System.Drawing.Point(130, 3);
+            this.editTreeButton.Location = new System.Drawing.Point(124, 3);
             this.editTreeButton.Name = "editTreeButton";
             this.editTreeButton.Size = new System.Drawing.Size(75, 24);
             this.editTreeButton.TabIndex = 16;
-            this.editTreeButton.Text = "Edit";
+            this.editTreeButton.Text = "Add";
             this.editTreeButton.UseVisualStyleBackColor = true;
             this.editTreeButton.Click += new System.EventHandler(this.editTreeButton_Click);
             // 
@@ -477,7 +484,7 @@
             // 
             this.deleteTreeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteTreeButton.Enabled = false;
-            this.deleteTreeButton.Location = new System.Drawing.Point(211, 3);
+            this.deleteTreeButton.Location = new System.Drawing.Point(205, 3);
             this.deleteTreeButton.Name = "deleteTreeButton";
             this.deleteTreeButton.Size = new System.Drawing.Size(75, 24);
             this.deleteTreeButton.TabIndex = 15;
@@ -499,10 +506,11 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.SeaShell;
             this.panel6.Controls.Add(this.catFileLabel);
+            this.panel6.Controls.Add(this.hideTreeList);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(289, 35);
+            this.panel6.Size = new System.Drawing.Size(283, 35);
             this.panel6.TabIndex = 3;
             // 
             // catFileLabel
@@ -512,123 +520,98 @@
             this.catFileLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catFileLabel.Location = new System.Drawing.Point(0, 0);
             this.catFileLabel.Name = "catFileLabel";
-            this.catFileLabel.Size = new System.Drawing.Size(289, 35);
+            this.catFileLabel.Size = new System.Drawing.Size(258, 35);
             this.catFileLabel.TabIndex = 0;
             this.catFileLabel.Text = "No Opened Category";
             this.catFileLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // hideTreeList
+            // 
+            this.hideTreeList.Dock = System.Windows.Forms.DockStyle.Right;
+            this.hideTreeList.Location = new System.Drawing.Point(258, 0);
+            this.hideTreeList.Name = "hideTreeList";
+            this.hideTreeList.Size = new System.Drawing.Size(25, 35);
+            this.hideTreeList.TabIndex = 1;
+            this.hideTreeList.Text = "<";
+            this.hideTreeList.UseVisualStyleBackColor = true;
+            this.hideTreeList.Click += new System.EventHandler(this.hideTreeList_Click);
+            // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.wizardTab);
+            this.tabControl1.Controls.Add(this.editorTab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 35);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(25, 6);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(416, 352);
+            this.tabControl1.Size = new System.Drawing.Size(422, 352);
             this.tabControl1.TabIndex = 5;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // tabPage1
+            // wizardTab
             // 
-            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(408, 320);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Normal Editor";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.wizardTab.Controls.Add(this.tableLayoutPanel2);
+            this.wizardTab.Location = new System.Drawing.Point(4, 28);
+            this.wizardTab.Name = "wizardTab";
+            this.wizardTab.Size = new System.Drawing.Size(414, 320);
+            this.wizardTab.TabIndex = 0;
+            this.wizardTab.Text = "Normal Editor";
+            this.wizardTab.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.panel4, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.panel3, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.catnameBox, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.catnoteBox, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.problemListView, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.branchListView, 1, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 320);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(414, 320);
             this.tableLayoutPanel2.TabIndex = 4;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.deleteBranchButton);
-            this.panel4.Controls.Add(this.addBranchButton);
-            this.panel4.Controls.Add(this.editBranchButton);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(70, 291);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(338, 29);
-            this.panel4.TabIndex = 17;
-            // 
-            // deleteBranchButton
-            // 
-            this.deleteBranchButton.Enabled = false;
-            this.deleteBranchButton.Location = new System.Drawing.Point(84, 3);
-            this.deleteBranchButton.Name = "deleteBranchButton";
-            this.deleteBranchButton.Size = new System.Drawing.Size(75, 24);
-            this.deleteBranchButton.TabIndex = 15;
-            this.deleteBranchButton.Text = "Delete";
-            this.deleteBranchButton.UseVisualStyleBackColor = true;
-            this.deleteBranchButton.Click += new System.EventHandler(this.deleteBranchButton_Click);
-            // 
-            // addBranchButton
-            // 
-            this.addBranchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBranchButton.Location = new System.Drawing.Point(229, 3);
-            this.addBranchButton.Name = "addBranchButton";
-            this.addBranchButton.Size = new System.Drawing.Size(105, 24);
-            this.addBranchButton.TabIndex = 8;
-            this.addBranchButton.Text = "Add Branch";
-            this.addBranchButton.UseVisualStyleBackColor = true;
-            this.addBranchButton.Click += new System.EventHandler(this.addBranchButton_Click);
-            // 
-            // editBranchButton
-            // 
-            this.editBranchButton.Enabled = false;
-            this.editBranchButton.Location = new System.Drawing.Point(3, 3);
-            this.editBranchButton.Name = "editBranchButton";
-            this.editBranchButton.Size = new System.Drawing.Size(75, 24);
-            this.editBranchButton.TabIndex = 14;
-            this.editBranchButton.Text = "Edit";
-            this.editBranchButton.UseVisualStyleBackColor = true;
-            this.editBranchButton.Click += new System.EventHandler(this.editBranchButton_Click);
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.addBatchButton);
             this.panel3.Controls.Add(this.deleteProbButton);
             this.panel3.Controls.Add(this.editProbButton);
             this.panel3.Controls.Add(this.addProbButton);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(70, 180);
+            this.panel3.Location = new System.Drawing.Point(70, 292);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(338, 28);
+            this.panel3.Size = new System.Drawing.Size(344, 28);
             this.panel3.TabIndex = 16;
+            // 
+            // addBatchButton
+            // 
+            this.addBatchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addBatchButton.Location = new System.Drawing.Point(185, 2);
+            this.addBatchButton.Name = "addBatchButton";
+            this.addBatchButton.Size = new System.Drawing.Size(75, 24);
+            this.addBatchButton.TabIndex = 14;
+            this.addBatchButton.Text = "Add Batch";
+            this.addBatchButton.UseVisualStyleBackColor = true;
+            this.addBatchButton.Click += new System.EventHandler(this.addBatch_Click);
             // 
             // deleteProbButton
             // 
             this.deleteProbButton.Enabled = false;
-            this.deleteProbButton.Location = new System.Drawing.Point(84, 3);
+            this.deleteProbButton.Location = new System.Drawing.Point(84, 2);
             this.deleteProbButton.Name = "deleteProbButton";
             this.deleteProbButton.Size = new System.Drawing.Size(75, 24);
             this.deleteProbButton.TabIndex = 13;
@@ -639,7 +622,7 @@
             // editProbButton
             // 
             this.editProbButton.Enabled = false;
-            this.editProbButton.Location = new System.Drawing.Point(3, 3);
+            this.editProbButton.Location = new System.Drawing.Point(3, 2);
             this.editProbButton.Name = "editProbButton";
             this.editProbButton.Size = new System.Drawing.Size(75, 24);
             this.editProbButton.TabIndex = 12;
@@ -650,11 +633,11 @@
             // addProbButton
             // 
             this.addProbButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addProbButton.Location = new System.Drawing.Point(229, 3);
+            this.addProbButton.Location = new System.Drawing.Point(266, 2);
             this.addProbButton.Name = "addProbButton";
-            this.addProbButton.Size = new System.Drawing.Size(105, 24);
+            this.addProbButton.Size = new System.Drawing.Size(75, 24);
             this.addProbButton.TabIndex = 8;
-            this.addProbButton.Text = "Add Problem";
+            this.addProbButton.Text = "Add";
             this.addProbButton.UseVisualStyleBackColor = true;
             this.addProbButton.Click += new System.EventHandler(this.addProbButton_Click);
             // 
@@ -668,23 +651,13 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Name :";
             // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 243);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Branches :";
-            // 
             // catnameBox
             // 
             this.catnameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.catnameBox.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catnameBox.Location = new System.Drawing.Point(73, 3);
             this.catnameBox.Name = "catnameBox";
-            this.catnameBox.Size = new System.Drawing.Size(332, 24);
+            this.catnameBox.Size = new System.Drawing.Size(338, 24);
             this.catnameBox.TabIndex = 9;
             this.catnameBox.TextChanged += new System.EventHandler(this.catnameBox_TextChanged);
             // 
@@ -696,7 +669,7 @@
             this.catnoteBox.Multiline = true;
             this.catnoteBox.Name = "catnoteBox";
             this.catnoteBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.catnoteBox.Size = new System.Drawing.Size(332, 44);
+            this.catnoteBox.Size = new System.Drawing.Size(338, 44);
             this.catnoteBox.TabIndex = 11;
             this.catnoteBox.TextChanged += new System.EventHandler(this.catnoteBox_TextChanged);
             // 
@@ -714,7 +687,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 122);
+            this.label6.Location = new System.Drawing.Point(7, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 4;
@@ -737,10 +710,11 @@
             this.problemListView.FullRowSelect = true;
             this.problemListView.HideSelection = false;
             this.problemListView.Location = new System.Drawing.Point(73, 81);
+            this.problemListView.MultiSelect = false;
             this.problemListView.Name = "problemListView";
             this.problemListView.ShowGroups = false;
             this.problemListView.ShowItemToolTips = true;
-            this.problemListView.Size = new System.Drawing.Size(332, 96);
+            this.problemListView.Size = new System.Drawing.Size(338, 208);
             this.problemListView.TabIndex = 18;
             this.problemListView.UseCellFormatEvents = true;
             this.problemListView.UseCompatibleStateImageBehavior = false;
@@ -775,61 +749,16 @@
             this.noteProb.Text = "Notes";
             this.noteProb.Width = 200;
             // 
-            // branchListView
+            // editorTab
             // 
-            this.branchListView.AllColumns.Add(this.nameCat);
-            this.branchListView.AllColumns.Add(this.noteCat);
-            this.branchListView.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
-            this.branchListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.nameCat,
-            this.noteCat});
-            this.branchListView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.branchListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.branchListView.EmptyListMsg = "Click on Add Branch";
-            this.branchListView.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branchListView.FullRowSelect = true;
-            this.branchListView.HideSelection = false;
-            this.branchListView.Location = new System.Drawing.Point(73, 211);
-            this.branchListView.Name = "branchListView";
-            this.branchListView.ShowGroups = false;
-            this.branchListView.ShowItemToolTips = true;
-            this.branchListView.Size = new System.Drawing.Size(332, 77);
-            this.branchListView.TabIndex = 19;
-            this.branchListView.UseCellFormatEvents = true;
-            this.branchListView.UseCompatibleStateImageBehavior = false;
-            this.branchListView.UseCustomSelectionColors = true;
-            this.branchListView.UseHotItem = true;
-            this.branchListView.UseTranslucentHotItem = true;
-            this.branchListView.UseTranslucentSelection = true;
-            this.branchListView.View = System.Windows.Forms.View.Details;
-            this.branchListView.VirtualMode = true;
-            this.branchListView.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.branchListView_CellEditFinishing);
-            this.branchListView.SelectedIndexChanged += new System.EventHandler(this.deleteProbButton_Click);
-            this.branchListView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.branchList_KeyUp);
-            // 
-            // nameCat
-            // 
-            this.nameCat.AspectName = "name";
-            this.nameCat.Text = "Name";
-            this.nameCat.Width = 200;
-            // 
-            // noteCat
-            // 
-            this.noteCat.AspectName = "note";
-            this.noteCat.FillsFreeSpace = true;
-            this.noteCat.Text = "Notes";
-            this.noteCat.Width = 250;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.fastColoredTextBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(408, 320);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Json Editor";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.editorTab.Controls.Add(this.fastColoredTextBox1);
+            this.editorTab.Location = new System.Drawing.Point(4, 28);
+            this.editorTab.Name = "editorTab";
+            this.editorTab.Padding = new System.Windows.Forms.Padding(3);
+            this.editorTab.Size = new System.Drawing.Size(414, 320);
+            this.editorTab.TabIndex = 1;
+            this.editorTab.Text = "JSON Editor";
+            this.editorTab.UseVisualStyleBackColor = true;
             // 
             // fastColoredTextBox1
             // 
@@ -842,9 +771,11 @@
         '\"',
         '\"'};
             this.fastColoredTextBox1.AutoIndentChars = false;
-            this.fastColoredTextBox1.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\n";
-            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(27, 15);
+            this.fastColoredTextBox1.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\n^\\s*(case|default)\\s*[^:]*(" +
+    "?<range>:)\\s*(?<range>[^;]+);\n";
+            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(2, 15);
             this.fastColoredTextBox1.BackBrush = null;
+            this.fastColoredTextBox1.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
             this.fastColoredTextBox1.CharHeight = 15;
             this.fastColoredTextBox1.CharWidth = 8;
             this.fastColoredTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -853,17 +784,17 @@
             this.fastColoredTextBox1.Font = new System.Drawing.Font("Consolas", 10F);
             this.fastColoredTextBox1.IsReplaceMode = false;
             this.fastColoredTextBox1.Language = FastColoredTextBoxNS.Language.CSharp;
-            this.fastColoredTextBox1.LeftBracket = '{';
-            this.fastColoredTextBox1.LeftBracket2 = '[';
+            this.fastColoredTextBox1.LeftBracket = '(';
+            this.fastColoredTextBox1.LeftBracket2 = '{';
             this.fastColoredTextBox1.Location = new System.Drawing.Point(3, 3);
             this.fastColoredTextBox1.Name = "fastColoredTextBox1";
             this.fastColoredTextBox1.Paddings = new System.Windows.Forms.Padding(0);
-            this.fastColoredTextBox1.RightBracket = '}';
-            this.fastColoredTextBox1.RightBracket2 = ']';
+            this.fastColoredTextBox1.RightBracket = ')';
+            this.fastColoredTextBox1.RightBracket2 = '}';
             this.fastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.fastColoredTextBox1.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox1.ServiceColors")));
             this.fastColoredTextBox1.ShowFoldingLines = true;
-            this.fastColoredTextBox1.Size = new System.Drawing.Size(402, 314);
+            this.fastColoredTextBox1.Size = new System.Drawing.Size(408, 314);
             this.fastColoredTextBox1.TabIndex = 0;
             this.fastColoredTextBox1.TabLength = 2;
             this.fastColoredTextBox1.Zoom = 100;
@@ -881,7 +812,7 @@
             this.backTableLayout.Name = "backTableLayout";
             this.backTableLayout.RowCount = 1;
             this.backTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.backTableLayout.Size = new System.Drawing.Size(416, 35);
+            this.backTableLayout.Size = new System.Drawing.Size(422, 35);
             this.backTableLayout.TabIndex = 1;
             // 
             // backButton
@@ -906,7 +837,7 @@
             this.pathLabel.Font = new System.Drawing.Font("Consolas", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pathLabel.Location = new System.Drawing.Point(103, 10);
             this.pathLabel.Name = "pathLabel";
-            this.pathLabel.Size = new System.Drawing.Size(310, 15);
+            this.pathLabel.Size = new System.Drawing.Size(316, 15);
             this.pathLabel.TabIndex = 1;
             this.pathLabel.Text = "...";
             // 
@@ -922,14 +853,14 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(416, 34);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(422, 34);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveButton.Location = new System.Drawing.Point(293, 3);
+            this.saveButton.Location = new System.Drawing.Point(299, 3);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(120, 28);
             this.saveButton.TabIndex = 1;
@@ -968,14 +899,12 @@
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.wizardTab.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.problemListView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.branchListView)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.editorTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).EndInit();
             this.backTableLayout.ResumeLayout(false);
             this.backTableLayout.PerformLayout();
@@ -999,7 +928,6 @@
         private System.Windows.Forms.TextBox catnoteBox;
         private System.Windows.Forms.TextBox catnameBox;
         private System.Windows.Forms.Button addProbButton;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -1009,12 +937,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button addBranchButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button editProbButton;
-        private System.Windows.Forms.Button deleteBranchButton;
-        private System.Windows.Forms.Button editBranchButton;
         private System.Windows.Forms.Button deleteProbButton;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button deleteListButton;
@@ -1028,12 +952,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox filenameBox;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage wizardTab;
+        private System.Windows.Forms.TabPage editorTab;
         private BrightIdeasSoftware.FastObjectListView fileList;
         private BrightIdeasSoftware.TreeListView treeList;
         private BrightIdeasSoftware.FastObjectListView problemListView;
-        private BrightIdeasSoftware.FastObjectListView branchListView;
         private FastColoredTextBoxNS.FastColoredTextBox fastColoredTextBox1;
         private BrightIdeasSoftware.OLVColumn fileNameCol;
         private BrightIdeasSoftware.OLVColumn fileVersionCol;
@@ -1041,8 +964,6 @@
         private BrightIdeasSoftware.OLVColumn pnumProb;
         private BrightIdeasSoftware.OLVColumn starProb;
         private BrightIdeasSoftware.OLVColumn noteProb;
-        private BrightIdeasSoftware.OLVColumn nameCat;
-        private BrightIdeasSoftware.OLVColumn noteCat;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem reloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -1051,6 +972,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem expandAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem collapseAllToolStripMenuItem;
+        private System.Windows.Forms.Button addBatchButton;
+        private System.Windows.Forms.Button hideCategoryList;
+        private System.Windows.Forms.Button hideTreeList;
     }
 }
 

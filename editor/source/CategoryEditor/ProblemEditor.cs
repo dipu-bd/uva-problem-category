@@ -13,61 +13,42 @@ namespace CategoryEditor
         public ProblemEditor(CategoryNode nod)
         {
             InitializeComponent();
-
             this.node = nod;
-
-            numberVal.Focus();
-            numberVal.Value = 100;
-            noteTextBox.Text = "";
-            starCombo.SelectedIndex = 0;
         }
 
         private CategoryNode node;
 
-        bool addProblem()
+        void addProblem()
         {
-            int pnum = (int)numberVal.Value;
-            if (node.hasProblem(pnum))
+            if (node.problems == null) return; 
+            int start = (int)start1.Value;
+            int stop = (int)stop1.Value;
+            int step = (int)step1.Value;
+            for (int i = start; i <= stop; i += step)
             {
-                MessageBox.Show("Problem number is already on the list.");
-                return false;
+                var v = new CategoryProblem(i);
+                v.setParent(node);
+                node.problems.Add(v);
             }
+        }
 
-            CategoryProblem problem = new CategoryProblem(pnum);
-            problem.note = noteTextBox.Text.Trim();
-            problem.star = (starCombo.SelectedIndex == 1);
-            return true;
+        private void start1_ValueChanged(object sender, EventArgs e)
+        {
+            stop1.Minimum = start1.Value;
         }
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            if(!addProblem()) return;
+            addProblem();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
-        }
-
-        private void addNewButton_Click(object sender, EventArgs e)
-        {
-            if (!addProblem()) return;
-            numberVal.Focus();
-            starCombo.SelectedIndex = 0;
-            noteTextBox.Text = "";
-        }
-
-        private void numberVal_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                addNewButton.PerformClick();
-            }
-        }
-
+        }        
 
     }
 }
