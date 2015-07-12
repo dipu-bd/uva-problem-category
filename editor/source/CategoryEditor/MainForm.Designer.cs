@@ -39,23 +39,33 @@
             this.addButton = new System.Windows.Forms.Button();
             this.filenameBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fileList = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.fileList = new BrightIdeasSoftware.FastObjectListView();
+            this.fileNameCol = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.fileVersionCol = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panel5 = new System.Windows.Forms.Panel();
             this.deleteListButton = new System.Windows.Forms.Button();
             this.editListButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView = new System.Windows.Forms.TreeView();
+            this.treeList = new BrightIdeasSoftware.TreeListView();
+            this.nameTreeCol = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.reloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.expandAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.collapseAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
             this.editTreeButton = new System.Windows.Forms.Button();
             this.deleteTreeButton = new System.Windows.Forms.Button();
             this.reloadTreeButton = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.catFileLabel = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.deleteBranchButton = new System.Windows.Forms.Button();
@@ -70,33 +80,43 @@
             this.catnameBox = new System.Windows.Forms.TextBox();
             this.catnoteBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.problemList = new System.Windows.Forms.ListView();
-            this.NumberCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.StarCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NotesCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label6 = new System.Windows.Forms.Label();
-            this.branchList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.problemListView = new BrightIdeasSoftware.FastObjectListView();
+            this.pnumProb = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.starProb = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.noteProb = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.branchListView = new BrightIdeasSoftware.FastObjectListView();
+            this.nameCat = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.noteCat = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.fastColoredTextBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
             this.backTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.backButton = new System.Windows.Forms.Button();
             this.pathLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.saveButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileList)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.problemListView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchListView)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).BeginInit();
             this.backTableLayout.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -212,46 +232,48 @@
             // 
             // fileList
             // 
-            this.fileList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
+            this.fileList.AllColumns.Add(this.fileNameCol);
+            this.fileList.AllColumns.Add(this.fileVersionCol);
+            this.fileList.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.fileList.CellEditTabChangesRows = true;
             this.fileList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5});
+            this.fileNameCol,
+            this.fileVersionCol});
+            this.fileList.Cursor = System.Windows.Forms.Cursors.Default;
             this.fileList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileList.EmptyListMsg = "Add new category";
             this.fileList.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileList.FullRowSelect = true;
             this.fileList.HideSelection = false;
-            this.fileList.LabelEdit = true;
             this.fileList.Location = new System.Drawing.Point(0, 35);
             this.fileList.Name = "fileList";
+            this.fileList.ShowGroups = false;
+            this.fileList.ShowItemToolTips = true;
             this.fileList.Size = new System.Drawing.Size(200, 279);
-            this.fileList.SmallImageList = this.imageList1;
-            this.fileList.TabIndex = 3;
+            this.fileList.TabIndex = 21;
+            this.fileList.UseCellFormatEvents = true;
             this.fileList.UseCompatibleStateImageBehavior = false;
+            this.fileList.UseCustomSelectionColors = true;
+            this.fileList.UseHotItem = true;
+            this.fileList.UseTranslucentHotItem = true;
+            this.fileList.UseTranslucentSelection = true;
             this.fileList.View = System.Windows.Forms.View.Details;
-            this.fileList.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.fileList_AfterLabelEdit);
+            this.fileList.VirtualMode = true;
+            this.fileList.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.fileList_CellEditFinishing);
             this.fileList.SelectedIndexChanged += new System.EventHandler(this.fileList_SelectedIndexChanged);
             this.fileList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fileList_KeyUp);
             // 
-            // columnHeader4
+            // fileNameCol
             // 
-            this.columnHeader4.Text = "File Name";
-            this.columnHeader4.Width = 150;
+            this.fileNameCol.AspectName = "file";
+            this.fileNameCol.FillsFreeSpace = true;
+            this.fileNameCol.Text = "File Name";
             // 
-            // columnHeader5
+            // fileVersionCol
             // 
-            this.columnHeader5.Text = "Version";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "bfolder.png");
-            this.imageList1.Images.SetKeyName(1, "blist.png");
-            this.imageList1.Images.SetKeyName(2, "pfile.png");
-            this.imageList1.Images.SetKeyName(3, "pfolder.png");
-            this.imageList1.Images.SetKeyName(4, "pstar.png");
-            this.imageList1.Images.SetKeyName(5, "root.png");
-            this.imageList1.Images.SetKeyName(6, "big.png");
+            this.fileVersionCol.AspectName = "ver";
+            this.fileVersionCol.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fileVersionCol.Text = "Version";
             // 
             // panel5
             // 
@@ -317,37 +339,114 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView);
+            this.splitContainer1.Panel1.Controls.Add(this.treeList);
             this.splitContainer1.Panel1.Controls.Add(this.panel7);
             this.splitContainer1.Panel1.Controls.Add(this.panel6);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
+            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Panel2.Controls.Add(this.backTableLayout);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel3);
             this.splitContainer1.Size = new System.Drawing.Size(709, 421);
             this.splitContainer1.SplitterDistance = 289;
             this.splitContainer1.TabIndex = 2;
             // 
-            // treeView
+            // treeList
             // 
-            this.treeView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
-            this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView.HideSelection = false;
-            this.treeView.ImageIndex = 0;
-            this.treeView.ImageList = this.imageList1;
-            this.treeView.ItemHeight = 20;
-            this.treeView.Location = new System.Drawing.Point(0, 35);
-            this.treeView.Name = "treeView";
-            this.treeView.SelectedImageIndex = 0;
-            this.treeView.ShowNodeToolTips = true;
-            this.treeView.Size = new System.Drawing.Size(289, 356);
-            this.treeView.TabIndex = 0;
-            this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
-            this.treeView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.treeView_KeyUp);
+            this.treeList.AllColumns.Add(this.nameTreeCol);
+            this.treeList.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.treeList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nameTreeCol});
+            this.treeList.ContextMenuStrip = this.contextMenuStrip1;
+            this.treeList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.treeList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeList.EmptyListMsg = "Select a category";
+            this.treeList.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeList.HideSelection = false;
+            this.treeList.Location = new System.Drawing.Point(0, 35);
+            this.treeList.Name = "treeList";
+            this.treeList.OwnerDraw = true;
+            this.treeList.ShowGroups = false;
+            this.treeList.ShowItemToolTips = true;
+            this.treeList.Size = new System.Drawing.Size(289, 356);
+            this.treeList.TabIndex = 20;
+            this.treeList.UseCellFormatEvents = true;
+            this.treeList.UseCompatibleStateImageBehavior = false;
+            this.treeList.UseCustomSelectionColors = true;
+            this.treeList.UseHotItem = true;
+            this.treeList.UseTranslucentHotItem = true;
+            this.treeList.UseTranslucentSelection = true;
+            this.treeList.View = System.Windows.Forms.View.Details;
+            this.treeList.VirtualMode = true;
+            this.treeList.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.treeList_CellEditFinishing);
+            this.treeList.SelectionChanged += new System.EventHandler(this.treeList_SelectionChanged);
+            this.treeList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.treeView_KeyUp);
+            // 
+            // nameTreeCol
+            // 
+            this.nameTreeCol.AspectName = "name";
+            this.nameTreeCol.Text = "Name";
+            this.nameTreeCol.Width = 400;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reloadToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.renameToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.expandAllToolStripMenuItem,
+            this.collapseAllToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(137, 126);
+            // 
+            // reloadToolStripMenuItem
+            // 
+            this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.reloadToolStripMenuItem.Text = "Reload";
+            this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadTreeButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.renameToolStripMenuItem.Text = "Rename";
+            this.renameToolStripMenuItem.Click += new System.EventHandler(this.editTreeButton_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteTreeButton_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(133, 6);
+            // 
+            // expandAllToolStripMenuItem
+            // 
+            this.expandAllToolStripMenuItem.Name = "expandAllToolStripMenuItem";
+            this.expandAllToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.expandAllToolStripMenuItem.Text = "Expand All";
+            this.expandAllToolStripMenuItem.Click += new System.EventHandler(this.expandAllToolStripMenuItem_Click);
+            // 
+            // collapseAllToolStripMenuItem
+            // 
+            this.collapseAllToolStripMenuItem.Name = "collapseAllToolStripMenuItem";
+            this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.collapseAllToolStripMenuItem.Text = "Collapse All";
+            this.collapseAllToolStripMenuItem.Click += new System.EventHandler(this.collapseAllToolStripMenuItem_Click);
             // 
             // panel7
             // 
@@ -364,6 +463,7 @@
             // 
             // editTreeButton
             // 
+            this.editTreeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editTreeButton.Enabled = false;
             this.editTreeButton.Location = new System.Drawing.Point(130, 3);
             this.editTreeButton.Name = "editTreeButton";
@@ -417,6 +517,29 @@
             this.catFileLabel.Text = "No Opened Category";
             this.catFileLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 35);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(25, 6);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(416, 352);
+            this.tabControl1.TabIndex = 5;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(408, 320);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Normal Editor";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -429,20 +552,20 @@
             this.tableLayoutPanel2.Controls.Add(this.catnameBox, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.catnoteBox, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.problemList, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.branchList, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.problemListView, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.branchListView, 1, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 35);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(416, 352);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 320);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // panel4
@@ -451,10 +574,10 @@
             this.panel4.Controls.Add(this.addBranchButton);
             this.panel4.Controls.Add(this.editBranchButton);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(70, 322);
+            this.panel4.Location = new System.Drawing.Point(70, 291);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(346, 30);
+            this.panel4.Size = new System.Drawing.Size(338, 29);
             this.panel4.TabIndex = 17;
             // 
             // deleteBranchButton
@@ -471,7 +594,7 @@
             // addBranchButton
             // 
             this.addBranchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBranchButton.Location = new System.Drawing.Point(237, 3);
+            this.addBranchButton.Location = new System.Drawing.Point(229, 3);
             this.addBranchButton.Name = "addBranchButton";
             this.addBranchButton.Size = new System.Drawing.Size(105, 24);
             this.addBranchButton.TabIndex = 8;
@@ -496,10 +619,10 @@
             this.panel3.Controls.Add(this.editProbButton);
             this.panel3.Controls.Add(this.addProbButton);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(70, 186);
+            this.panel3.Location = new System.Drawing.Point(70, 180);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(346, 30);
+            this.panel3.Size = new System.Drawing.Size(338, 28);
             this.panel3.TabIndex = 16;
             // 
             // deleteProbButton
@@ -527,7 +650,7 @@
             // addProbButton
             // 
             this.addProbButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addProbButton.Location = new System.Drawing.Point(237, 3);
+            this.addProbButton.Location = new System.Drawing.Point(229, 3);
             this.addProbButton.Name = "addProbButton";
             this.addProbButton.Size = new System.Drawing.Size(105, 24);
             this.addProbButton.TabIndex = 8;
@@ -539,7 +662,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 8);
+            this.label4.Location = new System.Drawing.Point(25, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 2;
@@ -549,7 +672,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 262);
+            this.label7.Location = new System.Drawing.Point(7, 243);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 13);
             this.label7.TabIndex = 5;
@@ -561,7 +684,7 @@
             this.catnameBox.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catnameBox.Location = new System.Drawing.Point(73, 3);
             this.catnameBox.Name = "catnameBox";
-            this.catnameBox.Size = new System.Drawing.Size(340, 24);
+            this.catnameBox.Size = new System.Drawing.Size(332, 24);
             this.catnameBox.TabIndex = 9;
             this.catnameBox.TextChanged += new System.EventHandler(this.catnameBox_TextChanged);
             // 
@@ -569,11 +692,11 @@
             // 
             this.catnoteBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.catnoteBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.catnoteBox.Location = new System.Drawing.Point(73, 33);
+            this.catnoteBox.Location = new System.Drawing.Point(73, 31);
             this.catnoteBox.Multiline = true;
             this.catnoteBox.Name = "catnoteBox";
             this.catnoteBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.catnoteBox.Size = new System.Drawing.Size(340, 44);
+            this.catnoteBox.Size = new System.Drawing.Size(332, 44);
             this.catnoteBox.TabIndex = 11;
             this.catnoteBox.TextChanged += new System.EventHandler(this.catnoteBox_TextChanged);
             // 
@@ -581,85 +704,169 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 48);
+            this.label5.Location = new System.Drawing.Point(24, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Notes :";
             // 
-            // problemList
-            // 
-            this.problemList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.NumberCol,
-            this.StarCol,
-            this.NotesCol});
-            this.problemList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.problemList.FullRowSelect = true;
-            this.problemList.GridLines = true;
-            this.problemList.HideSelection = false;
-            this.problemList.LabelEdit = true;
-            this.problemList.Location = new System.Drawing.Point(73, 83);
-            this.problemList.Name = "problemList";
-            this.problemList.Size = new System.Drawing.Size(340, 100);
-            this.problemList.TabIndex = 4;
-            this.problemList.UseCompatibleStateImageBehavior = false;
-            this.problemList.View = System.Windows.Forms.View.Details;
-            this.problemList.SelectedIndexChanged += new System.EventHandler(this.problemList_SelectedIndexChanged);
-            this.problemList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.problemList_KeyUp);
-            // 
-            // NumberCol
-            // 
-            this.NumberCol.Text = "Number";
-            this.NumberCol.Width = 80;
-            // 
-            // StarCol
-            // 
-            this.StarCol.Text = "Star";
-            this.StarCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // NotesCol
-            // 
-            this.NotesCol.Text = "Note";
-            this.NotesCol.Width = 180;
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 126);
+            this.label6.Location = new System.Drawing.Point(7, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 4;
             this.label6.Text = "Problems :";
             // 
-            // branchList
+            // problemListView
             // 
-            this.branchList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.branchList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.branchList.FullRowSelect = true;
-            this.branchList.GridLines = true;
-            this.branchList.HideSelection = false;
-            this.branchList.LabelEdit = true;
-            this.branchList.Location = new System.Drawing.Point(73, 219);
-            this.branchList.Name = "branchList";
-            this.branchList.Size = new System.Drawing.Size(340, 100);
-            this.branchList.TabIndex = 13;
-            this.branchList.UseCompatibleStateImageBehavior = false;
-            this.branchList.View = System.Windows.Forms.View.Details;
-            this.branchList.SelectedIndexChanged += new System.EventHandler(this.branchList_SelectedIndexChanged);
-            this.branchList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.branchList_KeyUp);
+            this.problemListView.AllColumns.Add(this.pnumProb);
+            this.problemListView.AllColumns.Add(this.starProb);
+            this.problemListView.AllColumns.Add(this.noteProb);
+            this.problemListView.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.problemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.pnumProb,
+            this.starProb,
+            this.noteProb});
+            this.problemListView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.problemListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.problemListView.EmptyListMsg = "Click on Add Problem";
+            this.problemListView.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.problemListView.FullRowSelect = true;
+            this.problemListView.HideSelection = false;
+            this.problemListView.Location = new System.Drawing.Point(73, 81);
+            this.problemListView.Name = "problemListView";
+            this.problemListView.ShowGroups = false;
+            this.problemListView.ShowItemToolTips = true;
+            this.problemListView.Size = new System.Drawing.Size(332, 96);
+            this.problemListView.TabIndex = 18;
+            this.problemListView.UseCellFormatEvents = true;
+            this.problemListView.UseCompatibleStateImageBehavior = false;
+            this.problemListView.UseCustomSelectionColors = true;
+            this.problemListView.UseHotItem = true;
+            this.problemListView.UseTranslucentHotItem = true;
+            this.problemListView.UseTranslucentSelection = true;
+            this.problemListView.View = System.Windows.Forms.View.Details;
+            this.problemListView.VirtualMode = true;
+            this.problemListView.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.problemListView_CellEditFinishing);
+            this.problemListView.SelectedIndexChanged += new System.EventHandler(this.problemList_SelectedIndexChanged);
+            this.problemListView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.problemList_KeyUp);
             // 
-            // columnHeader1
+            // pnumProb
             // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 120;
+            this.pnumProb.AspectName = "pnum";
+            this.pnumProb.Text = "Number";
+            this.pnumProb.Width = 100;
             // 
-            // columnHeader2
+            // starProb
             // 
-            this.columnHeader2.Text = "Note";
-            this.columnHeader2.Width = 180;
+            this.starProb.AspectName = "star";
+            this.starProb.CheckBoxes = true;
+            this.starProb.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.starProb.Text = "Star";
+            this.starProb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // noteProb
+            // 
+            this.noteProb.AspectName = "note";
+            this.noteProb.FillsFreeSpace = true;
+            this.noteProb.Text = "Notes";
+            this.noteProb.Width = 200;
+            // 
+            // branchListView
+            // 
+            this.branchListView.AllColumns.Add(this.nameCat);
+            this.branchListView.AllColumns.Add(this.noteCat);
+            this.branchListView.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.branchListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nameCat,
+            this.noteCat});
+            this.branchListView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.branchListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.branchListView.EmptyListMsg = "Click on Add Branch";
+            this.branchListView.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branchListView.FullRowSelect = true;
+            this.branchListView.HideSelection = false;
+            this.branchListView.Location = new System.Drawing.Point(73, 211);
+            this.branchListView.Name = "branchListView";
+            this.branchListView.ShowGroups = false;
+            this.branchListView.ShowItemToolTips = true;
+            this.branchListView.Size = new System.Drawing.Size(332, 77);
+            this.branchListView.TabIndex = 19;
+            this.branchListView.UseCellFormatEvents = true;
+            this.branchListView.UseCompatibleStateImageBehavior = false;
+            this.branchListView.UseCustomSelectionColors = true;
+            this.branchListView.UseHotItem = true;
+            this.branchListView.UseTranslucentHotItem = true;
+            this.branchListView.UseTranslucentSelection = true;
+            this.branchListView.View = System.Windows.Forms.View.Details;
+            this.branchListView.VirtualMode = true;
+            this.branchListView.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.branchListView_CellEditFinishing);
+            this.branchListView.SelectedIndexChanged += new System.EventHandler(this.deleteProbButton_Click);
+            this.branchListView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.branchList_KeyUp);
+            // 
+            // nameCat
+            // 
+            this.nameCat.AspectName = "name";
+            this.nameCat.Text = "Name";
+            this.nameCat.Width = 200;
+            // 
+            // noteCat
+            // 
+            this.noteCat.AspectName = "note";
+            this.noteCat.FillsFreeSpace = true;
+            this.noteCat.Text = "Notes";
+            this.noteCat.Width = 250;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.fastColoredTextBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(408, 320);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Json Editor";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // fastColoredTextBox1
+            // 
+            this.fastColoredTextBox1.AutoCompleteBrackets = true;
+            this.fastColoredTextBox1.AutoCompleteBracketsList = new char[] {
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"'};
+            this.fastColoredTextBox1.AutoIndentChars = false;
+            this.fastColoredTextBox1.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\n";
+            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(27, 15);
+            this.fastColoredTextBox1.BackBrush = null;
+            this.fastColoredTextBox1.CharHeight = 15;
+            this.fastColoredTextBox1.CharWidth = 8;
+            this.fastColoredTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fastColoredTextBox1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fastColoredTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fastColoredTextBox1.Font = new System.Drawing.Font("Consolas", 10F);
+            this.fastColoredTextBox1.IsReplaceMode = false;
+            this.fastColoredTextBox1.Language = FastColoredTextBoxNS.Language.CSharp;
+            this.fastColoredTextBox1.LeftBracket = '{';
+            this.fastColoredTextBox1.LeftBracket2 = '[';
+            this.fastColoredTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.fastColoredTextBox1.Name = "fastColoredTextBox1";
+            this.fastColoredTextBox1.Paddings = new System.Windows.Forms.Padding(0);
+            this.fastColoredTextBox1.RightBracket = '}';
+            this.fastColoredTextBox1.RightBracket2 = ']';
+            this.fastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.fastColoredTextBox1.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox1.ServiceColors")));
+            this.fastColoredTextBox1.ShowFoldingLines = true;
+            this.fastColoredTextBox1.Size = new System.Drawing.Size(402, 314);
+            this.fastColoredTextBox1.TabIndex = 0;
+            this.fastColoredTextBox1.TabLength = 2;
+            this.fastColoredTextBox1.Zoom = 100;
             // 
             // backTableLayout
             // 
@@ -710,7 +917,6 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.583F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.417F));
             this.tableLayoutPanel3.Controls.Add(this.saveButton, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.cancelButton, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 387);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -730,18 +936,6 @@
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.cancelButton.Location = new System.Drawing.Point(3, 3);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(120, 28);
-            this.cancelButton.TabIndex = 0;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // MainForm
             // 
@@ -763,17 +957,26 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileList)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.treeList)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.problemListView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchListView)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).EndInit();
             this.backTableLayout.ResumeLayout(false);
             this.backTableLayout.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -788,13 +991,11 @@
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.TextBox indexBox;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView fileList;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.TextBox catnoteBox;
         private System.Windows.Forms.TextBox catnameBox;
         private System.Windows.Forms.Button addProbButton;
@@ -806,23 +1007,12 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label pathLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.ListView problemList;
-        private System.Windows.Forms.ListView branchList;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button addBranchButton;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ColumnHeader NumberCol;
-        private System.Windows.Forms.ColumnHeader StarCol;
-        private System.Windows.Forms.ColumnHeader NotesCol;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button editProbButton;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button deleteBranchButton;
         private System.Windows.Forms.Button editBranchButton;
         private System.Windows.Forms.Button deleteProbButton;
@@ -837,6 +1027,30 @@
         private System.Windows.Forms.Button reloadTreeButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox filenameBox;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private BrightIdeasSoftware.FastObjectListView fileList;
+        private BrightIdeasSoftware.TreeListView treeList;
+        private BrightIdeasSoftware.FastObjectListView problemListView;
+        private BrightIdeasSoftware.FastObjectListView branchListView;
+        private FastColoredTextBoxNS.FastColoredTextBox fastColoredTextBox1;
+        private BrightIdeasSoftware.OLVColumn fileNameCol;
+        private BrightIdeasSoftware.OLVColumn fileVersionCol;
+        private BrightIdeasSoftware.OLVColumn nameTreeCol;
+        private BrightIdeasSoftware.OLVColumn pnumProb;
+        private BrightIdeasSoftware.OLVColumn starProb;
+        private BrightIdeasSoftware.OLVColumn noteProb;
+        private BrightIdeasSoftware.OLVColumn nameCat;
+        private BrightIdeasSoftware.OLVColumn noteCat;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem reloadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem expandAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem collapseAllToolStripMenuItem;
     }
 }
 

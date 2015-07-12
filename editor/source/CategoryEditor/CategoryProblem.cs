@@ -13,8 +13,28 @@ namespace CategoryEditor
             this.note = note;
         }
 
+        private CategoryNode parent;
+
         public int pnum { get; set; }
         public bool star { get; set; }
         public string note { get; set; }
+
+        public void setParent(CategoryNode v)
+        {
+            this.parent = v;
+        }
+
+        public CategoryNode getParent()
+        {
+            return this.parent;
+        }
+
+        /// <summary>
+        /// Removes this problem from parent list
+        /// </summary>
+        public void remove()
+        {
+            this.parent.problems.Remove(this);
+        }
     }
 }

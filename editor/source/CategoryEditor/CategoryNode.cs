@@ -9,13 +9,17 @@ namespace CategoryEditor
     [StructLayout(LayoutKind.Sequential)]
     public class CategoryNode
     {
-        public CategoryNode(string name = "", string note = "")
+        public CategoryNode(string name = "", string note = "", CategoryNode parent = null)
         {
             this.name = name;
             this.note = note;
             problems = new List<CategoryProblem>();
             branches = new List<CategoryNode>();
+            this.parent = parent;
         }
+
+        [Newtonsoft.Json.JsonIgnore]
+        private CategoryNode parent;
 
         public string name { get; set; }
         public string note { get; set; }
@@ -40,6 +44,50 @@ namespace CategoryEditor
                 if (b.name == title) return true;
             }
             return false;
+        }
+
+        public String getPath()
+        {
+            if (this.parent == null) 
+            {
+                return name;
+            }
+            else
+            {
+                return this.parent.getPath() + "/" + name;
+            }
+        }
+
+        public bool isTop()
+        {
+            return this.parent == null;
+        }
+
+        public void setParent(CategoryNode v)
+        {
+            this.parent = v;
+        }
+        public CategoryNode getParent()
+        {
+            return this.parent;
+        }
+
+        public void remove()
+        {
+            this.parent.branches.Remove(this);
+        }
+
+        public void updateParent()
+        { 
+            foreach(var v in branches)
+            {
+                v.setParent(this);
+                v.updateParent();
+            }
+            foreach(var v in problems)
+            {
+                v.setParent(this);
+            }
         }
     }
 }

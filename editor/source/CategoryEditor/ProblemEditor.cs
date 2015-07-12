@@ -10,51 +10,64 @@ namespace CategoryEditor
 {
     public partial class ProblemEditor : Form
     {
-        public ProblemEditor(CategoryProblem prob = null)
+        public ProblemEditor(CategoryNode nod)
         {
             InitializeComponent();
-            if (prob == null)
+
+            this.node = nod;
+
+            numberVal.Focus();
+            numberVal.Value = 100;
+            noteTextBox.Text = "";
+            starCombo.SelectedIndex = 0;
+        }
+
+        private CategoryNode node;
+
+        bool addProblem()
+        {
+            int pnum = (int)numberVal.Value;
+            if (node.hasProblem(pnum))
             {
-                this.Text = "Add Problem";
-                okButton.Text = "Add";
-                prob = new CategoryProblem();
+                MessageBox.Show("Problem number is already on the list.");
+                return false;
             }
 
-            Problem = prob;
-            numberTextBox.Text = prob.pnum.ToString();
-            noteTextBox.Text = prob.note;
-            starCombo.SelectedIndex = prob.star ? 1 : 0;
-        }
-                
-        public CategoryProblem Problem { get; set; }
-
-        private void starCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Problem.star = (starCombo.SelectedIndex == 1);
-        }
-
-        private void numberTextBox_TextChanged(object sender, EventArgs e)
-        {
-            int res = Problem.pnum;
-            int.TryParse(numberTextBox.Text, out res);
-            Problem.pnum = res;
-        }
-
-        private void noteTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Problem.note = noteTextBox.Text;
+            CategoryProblem problem = new CategoryProblem(pnum);
+            problem.note = noteTextBox.Text.Trim();
+            problem.star = (starCombo.SelectedIndex == 1);
+            return true;
         }
 
         private void okButton_Click(object sender, EventArgs e)
         {
+            if(!addProblem()) return;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
+
+        private void addNewButton_Click(object sender, EventArgs e)
+        {
+            if (!addProblem()) return;
+            numberVal.Focus();
+            starCombo.SelectedIndex = 0;
+            noteTextBox.Text = "";
+        }
+
+        private void numberVal_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                addNewButton.PerformClick();
+            }
+        }
+
+
     }
 }

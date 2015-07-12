@@ -68,13 +68,20 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>..\External\FastColoredTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\UVA-Arena\External References\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="ObjectListView">
+      <HintPath>..\External\ObjectListView.DLL</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -86,7 +93,7 @@
     <Compile Include="BranchEditor.Designer.cs">
       <DependentUpon>BranchEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="CategoryBranch.cs" />
+    <Compile Include="CategoryNode.cs" />
     <Compile Include="CategoryIndex.cs" />
     <Compile Include="CategoryProblem.cs" />
     <Compile Include="MainForm.cs">
@@ -138,6 +145,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="problems.ico" />
+    <None Include="Resources\root.png" />
+    <None Include="Resources\pstar.png" />
+    <None Include="Resources\pfolder.png" />
+    <None Include="Resources\pfile.png" />
+    <None Include="Resources\blist.png" />
+    <None Include="Resources\big.png" />
+    <None Include="Resources\bfolder.png" />
     <None Include="Resources\prev.png" />
   </ItemGroup>
   <ItemGroup>

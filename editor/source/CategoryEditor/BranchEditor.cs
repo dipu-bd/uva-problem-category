@@ -10,26 +10,35 @@ namespace CategoryEditor
 {
     public partial class BranchEditor : Form
     {
-        public BranchEditor(CategoryNode branch = null)
+        public BranchEditor(CategoryNode root)
         {
             InitializeComponent();
-
-            if(branch == null)
-            {
-                this.Text = "Add Branch";
-                okButton.Text = "Add";
-                branch = new CategoryNode("New Branch");
-            }
-
-            Branch = branch;
-            nameBox.Text = branch.name;
-            noteTextBox.Text = branch.note;
+            
+            this.root = root;
+            nameBox.Focus();
         }
 
-        public CategoryNode Branch { get; set; }
+        private CategoryNode root;
+
+        bool addBranch()
+        {
+            string name = nameBox.Text.Trim();
+            string note = noteTextBox.Text.Trim();
+            
+            if(string.IsNullOrEmpty(name)) return false;
+            if(root.hasBranch(name))
+            {
+                MessageBox.Show("Another branch with same name exist.");
+                return false;
+            }
+
+            root.branches.Add(new CategoryNode(name, note, root));
+            return true;
+        }               
 
         private void okButton_Click(object sender, EventArgs e)
         {
+            if (!addBranch()) return;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
@@ -38,16 +47,22 @@ namespace CategoryEditor
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
+        }        
+
+        private void addNewButton_Click(object sender, EventArgs e)
+        {
+            if (!addBranch()) return;
+            nameBox.Text = "";
+            noteTextBox.Text = "";
+            nameBox.Focus();
         }
 
-        private void numberTextBox_TextChanged(object sender, EventArgs e)
+        private void nameBox_KeyUp(object sender, KeyEventArgs e)
         {
-            Branch.name = nameBox.Text;
-        }
-
-        private void noteTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Branch.note = noteTextBox.Text;
+            if(e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
         }
     }
 }
