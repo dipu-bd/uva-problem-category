@@ -15,6 +15,15 @@ namespace CategoryEditor
             //downloadCPBook(2);
             //downloadCPBook(3);
 
+            if (!System.IO.File.Exists(Properties.Settings.Default.INDEX))
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                path = System.IO.Path.Combine(path, "UVA Arena");
+                path = System.IO.Path.Combine(path, "Category");
+                path = System.IO.Path.Combine(path, "INDEX");
+                Properties.Settings.Default.INDEX = path;
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
