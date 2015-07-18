@@ -1,0 +1,3570 @@
+{
+  "name": "AOAPC Problems",
+  "note": "Problems from AOAPC",
+  "problems": [],
+  "branches": [
+    {
+      "name": "AOAPC I",
+      "note": "Beginning Algorithm Contests (Rujia Liu)",
+      "problems": [],
+      "branches": [
+        {
+          "name": "Volume 0. Getting Started",
+          "note": "",
+          "problems": [
+            {
+              "pnum": 10055,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10071,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10300,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 458,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 494,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 414,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 490,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 445,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 488,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 489,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 694,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 457,
+              "star": false,
+              "note": ""
+            }
+          ],
+          "branches": []
+        },
+        {
+          "name": "Volume 1. Elementary Problem Solving",
+          "note": "",
+          "problems": [],
+          "branches": [
+            {
+              "name": "String",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 401,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10010,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10361,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 537,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 409,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10878,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10815,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 644,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10115,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Big Number",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 424,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10106,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 465,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 748,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10494,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Sorting/Searching",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 340,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10420,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10474,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 152,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 299,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 120,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 156,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 400,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 123,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10194,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 755,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10785,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Maths - Misc",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 113,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10161,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 253,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 621,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10025,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 591,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 107,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 573,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 846,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10499,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10790,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 11044,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10719,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10177,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10916,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10970,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10014,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Maths - Number Theory",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 575,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10110,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 550,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 568,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 408,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 350,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10061,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10392,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10879,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Maths - Simple Geometry",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 10250,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 579,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 375,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10387,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10112,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            }
+          ]
+        },
+        {
+          "name": "Volume 2. Data Structures",
+          "note": "",
+          "problems": [],
+          "branches": [
+            {
+              "name": "Lists",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 127,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 101,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 133,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10152,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 673,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 442,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 11111,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 11234,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 540,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10050,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Binary Trees",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 112,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 548,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 297,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 712,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 699,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 327,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 839,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10562,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Graphs",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 572,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 657,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 784,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 705,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 439,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 532,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10557,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10047,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10004,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10129,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10054,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10305,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 196,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            }
+          ]
+        },
+        {
+          "name": "Volume 3. Brute Force",
+          "note": "",
+          "problems": [],
+          "branches": [
+            {
+              "name": "Elementary Skills",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 10167,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 11205,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 131,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 146,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10098,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 729,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 592,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 110,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Backtracking - Easy",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 10474,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 216,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 639,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 539,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 301,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10344,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 331,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10012,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 165,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 167,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10001,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 140,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 193,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 208,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Backtracking - Hard",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 10123,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10160,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 197,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 185,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 307,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 317,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 387,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 519,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 529,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 565,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 502,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 322,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Implicit Graph Traversal",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 10603,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10422,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10085,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 310,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 321,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 704,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Hashing / Sets",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 188,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10282,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10391,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10125,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10887,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 141,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10591,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            },
+            {
+              "name": "Rujia Liu's Problems for Beginners",
+              "note": "",
+              "problems": [
+                {
+                  "pnum": 11218,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 11198,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10274,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 11210,
+                  "star": false,
+                  "note": ""
+                },
+                {
+                  "pnum": 10624,
+                  "star": false,
+                  "note": ""
+                }
+              ],
+              "branches": []
+            }
+          ]
+        },
+        {
+          "name": "Volume 4. Algorithm Design",
+          "note": "",
+          "problems": [
+            {
+              "pnum": 10905,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10763,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10132,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 270,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10341,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10057,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10706,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10487,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10340,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10700,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10026,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 311,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10020,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10714,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 714,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10602,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10400,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10718,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11054,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10382,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10670,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10720,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 993,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10716,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11100,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10245,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11129,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10041,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 507,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 108,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10827,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 757,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10148,
+              "star": false,
+              "note": ""
+            }
+          ],
+          "branches": []
+        },
+        {
+          "name": "Voloume 5. Dynamic Programming",
+          "note": "",
+          "problems": [
+            {
+              "pnum": 111,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 103,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10405,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 674,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10003,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 116,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10131,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10066,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10192,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10192,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 147,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 357,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 562,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 348,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 624,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10130,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 531,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10465,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10285,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 437,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10404,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 620,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 825,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10069,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10534,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10051,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10651,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 590,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10306,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10739,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10304,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10271,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10617,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11137,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10154,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10201,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10453,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10029,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10313,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10401,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10891,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11151,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10911,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10635,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10564,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 662,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10626,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10118,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 607,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10604,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10913,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11008,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10723,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11258,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10599,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10817,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10163,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 709,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10280,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10558,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11081,
+              "star": false,
+              "note": ""
+            }
+          ],
+          "branches": []
+        },
+        {
+          "name": "Volume 6. Mathematical Concepts and Methods",
+          "note": "",
+          "problems": [
+            {
+              "pnum": 138,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10006,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 128,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 106,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10673,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11121,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10791,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10717,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10820,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 571,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11029,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10023,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10308,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10105,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10375,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11027,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10056,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10491,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10759,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 542,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10277,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10277,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10169,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11181,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 557,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11176,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10417,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10183,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10303,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10518,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10862,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10334,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10229,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 763,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10236,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 991,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10079,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10940,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10359,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10519,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10918,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11069,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10910,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10254,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10328,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10154,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10328,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10157,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10247,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10516,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10128,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10081,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10943,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10721,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10912,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10616,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11125,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10205,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 701,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 696,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 254,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10994,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 306,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10570,
+              "star": false,
+              "note": ""
+            }
+          ],
+          "branches": []
+        },
+        {
+          "name": "Volume 7. Graph Algorithms and Implementation Techniques",
+          "note": "",
+          "problems": [
+            {
+              "pnum": 567,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10034,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10048,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10397,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10369,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 658,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10099,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10801,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10986,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 558,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 515,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 104,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 125,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10803,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10330,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10806,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 11045,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 753,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 563,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10746,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10594,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10985,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10608,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10158,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10269,
+              "star": false,
+              "note": ""
+            },
+            {
+              "pnum": 10273,
+              "star": false,
+              "note": ""
+            }
+          ],
+          "branches": []
+        }
+      ]
+    },
+    {
+      "name": "AOAPC I Training Guide",
+      "note": "Beginning Algorithm Contests -- Training Guide (Rujia Liu)",
+      "problems": [],
+      "branches": [
+        {
+          "name": "Chapter 1. Algorithm Design",
+          "note": "",
+          "problems": [],
+          "branches": [
+            {
+              "name": "General Problem Solving Techniques",
+              "note": "",
+              "problems": [],
+              "branches": [
+                {
+                  "name": "Examples",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 11292,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11729,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11300,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 13888,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10881,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1030,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11464,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1352,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11210,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11384,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10795,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12124,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12097,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11520,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1267,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1335,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                },
+                {
+                  "name": "Exercises: Beginner",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 11636,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11039,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1339,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1368,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10970,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10340,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10382,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1346,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1508,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1509,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10012,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10020,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10026,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10317,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10318,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10670,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1523,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1555,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1533,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 110,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 120,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 254,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 311,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 434,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 669,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 757,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 769,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 812,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 140,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 165,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 225,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 269,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 387,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 471,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 514,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 585,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 654,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 687,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 817,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 818,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                },
+                {
+                  "name": "Exercises: Intermediate",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 10905,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1422,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11627,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11134,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11100,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1344,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11389,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1418,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1153,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1419,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1420,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1445,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1421,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1377,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1354,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1374,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10037,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10602,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10716,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11127,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10120,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10123,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10366,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10396,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10479,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10483,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10570,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10609,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10624,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10729,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10747,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10771,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11012,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11106,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11269,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11387,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11714,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11776,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11920,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11986,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1554,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1531,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 668,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 714,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 211,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 219,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 229,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 279,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 307,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 322,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 502,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 510,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 519,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 529,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 589,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 609,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 646,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 649,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 690,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 764,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 770,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 772,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 798,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                },
+                {
+                  "name": "Exercises: Advanced",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 1450,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1467,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1316,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1491,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12326,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10825,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10639,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1355,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1295,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1448,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10383,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10411,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10414,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10492,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10571,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10605,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10628,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10833,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11694,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11794,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11846,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10272,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10471,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10640,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10658,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10675,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10786,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10904,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11006,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11041,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11129,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11142,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11184,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11251,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11268,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11318,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11445,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11522,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11527,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11570,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11630,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11814,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11925,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12011,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1535,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1536,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 135,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 605,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 608,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 799,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                }
+              ]
+            },
+            {
+              "name": "Designing Efficient Algorithms",
+              "note": "",
+              "problems": [],
+              "branches": [
+                {
+                  "name": "Examples",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 11462,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11078,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11549,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1398,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1121,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1330,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1382,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10755,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1326,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                },
+                {
+                  "name": "Exercises: Beginner",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 10125,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10763,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10391,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11054,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1312,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10535,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10730,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10810,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 221,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 517,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                },
+                {
+                  "name": "Exercises: Intermediate",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 1325,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10827,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1451,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12265,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1432,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1312,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1481,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1392,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1442,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1381,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12174,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1511,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12121,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10132,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10691,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11589,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11536,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11572,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1548,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1526,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                },
+                {
+                  "name": "Exercises: Advanced",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 1468,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1444,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                }
+              ]
+            },
+            {
+              "name": "Dynamic Programming",
+              "note": "",
+              "problems": [],
+              "branches": [
+                {
+                  "name": "Examples",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 1394,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10635,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10891,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11825,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10859,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1169,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1099,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                },
+                {
+                  "name": "Exercises: Beginner",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 11584,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1424,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10534,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11552,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11404,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1456,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11795,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1452,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1366,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10564,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10817,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1292,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1351,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1291,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1252,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10163,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10453,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10254,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 437,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 442,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 473,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 590,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 607,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 662,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 672,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                },
+                {
+                  "name": "Exercises: Intermediate",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 12260,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1427,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1407,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12235,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11600,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1474,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12222,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12223,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1414,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1347,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12080,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1379,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1370,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1371,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1372,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1299,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1331,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1390,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1484,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12105,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10003,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10239,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10271,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10304,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10599,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10604,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10618,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10641,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10671,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10688,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11263,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11400,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11578,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11691,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11766,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12002,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10726,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10934,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10981,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11307,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11456,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11782,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1534,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1543,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                },
+                {
+                  "name": "Exercises: Advanced",
+                  "note": "",
+                  "problems": [
+                    {
+                      "pnum": 1437,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1439,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1412,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1443,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1380,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12099,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1496,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1375,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1405,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1297,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1320,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1322,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1336,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 12170,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10559,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 1228,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11521,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 10949,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11193,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11194,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11810,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11171,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11435,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11502,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11750,
+                      "star": false,
+                      "note": ""
+                    },
+                    {
+                      "pnum": 11803,
+                      "star": false,
+                      "note": ""
+                    }
+                  ],
+                  "branches": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Chapter 2. Mathematics",
+          "note": "",
+          "problems": [],
+          "branches": []
+        },
+        {
+          "name": "Chapter 3. Data Structures",
+          "note": "",
+          "problems": [],
+          "branches": []
+        },
+        {
+          "name": "Chapter 4. Geometry",
+          "note": "",
+          "problems": [],
+          "branches": []
+        },
+        {
+          "name": "Chapter 5. Graph Theory",
+          "note": "",
+          "problems": [],
+          "branches": []
+        },
+        {
+          "name": "Chapter 6. Selected Topics",
+          "note": "",
+          "problems": [],
+          "branches": []
+        }
+      ]
+    },
+    {
+      "name": "AOAPC II",
+      "note": "Beginning Algorithm Contests (Second Edition) (Rujia Liu)",
+      "problems": [],
+      "branches": []
+    }
+  ]
+}

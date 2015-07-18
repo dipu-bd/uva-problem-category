@@ -104,11 +104,17 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProblemEditor.cs">
+    <Compile Include="ProblemBatch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProblemEditor.Designer.cs">
-      <DependentUpon>ProblemEditor.cs</DependentUpon>
+    <Compile Include="ProblemBatch.Designer.cs">
+      <DependentUpon>ProblemBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProblemCSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProblemCSV.Designer.cs">
+      <DependentUpon>ProblemCSV.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,8 +124,11 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProblemEditor.resx">
-      <DependentUpon>ProblemEditor.cs</DependentUpon>
+    <EmbeddedResource Include="ProblemBatch.resx">
+      <DependentUpon>ProblemBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProblemCSV.resx">
+      <DependentUpon>ProblemCSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

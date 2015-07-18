@@ -70,6 +70,7 @@
             this.wizardTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.addCSVButton = new System.Windows.Forms.Button();
             this.addBatchButton = new System.Windows.Forms.Button();
             this.deleteProbButton = new System.Windows.Forms.Button();
             this.editProbButton = new System.Windows.Forms.Button();
@@ -586,6 +587,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.addCSVButton);
             this.panel3.Controls.Add(this.addBatchButton);
             this.panel3.Controls.Add(this.deleteProbButton);
             this.panel3.Controls.Add(this.editProbButton);
@@ -597,12 +599,23 @@
             this.panel3.Size = new System.Drawing.Size(344, 28);
             this.panel3.TabIndex = 16;
             // 
+            // addCSVButton
+            // 
+            this.addCSVButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addCSVButton.Location = new System.Drawing.Point(127, 2);
+            this.addCSVButton.Name = "addCSVButton";
+            this.addCSVButton.Size = new System.Drawing.Size(70, 24);
+            this.addCSVButton.TabIndex = 15;
+            this.addCSVButton.Text = "Add CSV";
+            this.addCSVButton.UseVisualStyleBackColor = true;
+            this.addCSVButton.Click += new System.EventHandler(this.addCSVButton_Click);
+            // 
             // addBatchButton
             // 
             this.addBatchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBatchButton.Location = new System.Drawing.Point(185, 2);
+            this.addBatchButton.Location = new System.Drawing.Point(199, 2);
             this.addBatchButton.Name = "addBatchButton";
-            this.addBatchButton.Size = new System.Drawing.Size(75, 24);
+            this.addBatchButton.Size = new System.Drawing.Size(70, 24);
             this.addBatchButton.TabIndex = 14;
             this.addBatchButton.Text = "Add Batch";
             this.addBatchButton.UseVisualStyleBackColor = true;
@@ -611,9 +624,9 @@
             // deleteProbButton
             // 
             this.deleteProbButton.Enabled = false;
-            this.deleteProbButton.Location = new System.Drawing.Point(84, 2);
+            this.deleteProbButton.Location = new System.Drawing.Point(55, 2);
             this.deleteProbButton.Name = "deleteProbButton";
-            this.deleteProbButton.Size = new System.Drawing.Size(75, 24);
+            this.deleteProbButton.Size = new System.Drawing.Size(50, 24);
             this.deleteProbButton.TabIndex = 13;
             this.deleteProbButton.Text = "Delete";
             this.deleteProbButton.UseVisualStyleBackColor = true;
@@ -624,7 +637,7 @@
             this.editProbButton.Enabled = false;
             this.editProbButton.Location = new System.Drawing.Point(3, 2);
             this.editProbButton.Name = "editProbButton";
-            this.editProbButton.Size = new System.Drawing.Size(75, 24);
+            this.editProbButton.Size = new System.Drawing.Size(50, 24);
             this.editProbButton.TabIndex = 12;
             this.editProbButton.Text = "Edit";
             this.editProbButton.UseVisualStyleBackColor = true;
@@ -633,9 +646,9 @@
             // addProbButton
             // 
             this.addProbButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addProbButton.Location = new System.Drawing.Point(266, 2);
+            this.addProbButton.Location = new System.Drawing.Point(271, 2);
             this.addProbButton.Name = "addProbButton";
-            this.addProbButton.Size = new System.Drawing.Size(75, 24);
+            this.addProbButton.Size = new System.Drawing.Size(70, 24);
             this.addProbButton.TabIndex = 8;
             this.addProbButton.Text = "Add";
             this.addProbButton.UseVisualStyleBackColor = true;
@@ -773,7 +786,7 @@
             this.fastColoredTextBox1.AutoIndentChars = false;
             this.fastColoredTextBox1.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\n^\\s*(case|default)\\s*[^:]*(" +
     "?<range>:)\\s*(?<range>[^;]+);\n";
-            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(2, 15);
+            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(27, 15);
             this.fastColoredTextBox1.BackBrush = null;
             this.fastColoredTextBox1.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
             this.fastColoredTextBox1.CharHeight = 15;
@@ -975,6 +988,7 @@
         private System.Windows.Forms.Button addBatchButton;
         private System.Windows.Forms.Button hideCategoryList;
         private System.Windows.Forms.Button hideTreeList;
+        private System.Windows.Forms.Button addCSVButton;
     }
 }
 

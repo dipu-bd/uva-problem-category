@@ -1,6 +1,6 @@
 ﻿namespace CategoryEditor
 {
-    partial class ProblemEditor
+    partial class ProblemBatch
     {
         /// <summary>
         /// Required designer variable.

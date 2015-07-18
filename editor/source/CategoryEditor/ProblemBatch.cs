@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace CategoryEditor
 {
-    public partial class ProblemEditor : Form
+    public partial class ProblemBatch : Form
     {
-        public ProblemEditor(CategoryNode nod)
+        public ProblemBatch(CategoryNode nod)
         {
             InitializeComponent();
             this.node = nod;

@@ -30,7 +30,7 @@ namespace CategoryEditor
 
             //load default state 
             this.WindowState = Properties.Settings.Default.LastWinState;
-            loadAspectValues();
+            setListGetterMethods();
 
             closeEditing();
             closeOpenedBranch();
@@ -72,7 +72,7 @@ namespace CategoryEditor
             return true;
         }
 
-        void loadAspectValues()
+        void setListGetterMethods()
         {
             fileList.FormatCell += delegate(object sender, BrightIdeasSoftware.FormatCellEventArgs e)
             {
@@ -104,6 +104,7 @@ namespace CategoryEditor
 
             nameTreeCol.ImageGetter = delegate(object data)
             {
+                if (data == null) return null;
                 if (((CategoryNode)data).isTop())
                     return ROOT_FOLDER;
                 else
@@ -112,12 +113,14 @@ namespace CategoryEditor
 
             pnumProb.ImageGetter = delegate(object data)
             {
+                if (data == null) return null;
                 if (((CategoryProblem)data).star)
                     return PROB_STAR;
                 else
                     return PROB_NORMAL;
             };
         }
+
         #endregion
 
         #region Loader methods
@@ -702,14 +705,18 @@ namespace CategoryEditor
         private void problemListView_CellEditFinishing(object sender, BrightIdeasSoftware.CellEditEventArgs e)
         {
             if (!e.NewValue.Equals(e.Value))
+            {
                 branchEdited = true;
+                problemListView.Focus();
+            }
         }
 
         private void addBatch_Click(object sender, EventArgs e)
         {
-            ProblemEditor pe = new ProblemEditor(editingNode);
+            ProblemBatch pe = new ProblemBatch(editingNode);
             if (pe.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+                branchEdited = true;
                 saveOpenedBranch();
                 int last = problemListView.GetItemCount();
                 problemListView.SetObjects(editingNode.problems);
@@ -721,10 +728,22 @@ namespace CategoryEditor
             }
         }
 
+        private void addCSVButton_Click(object sender, EventArgs e)
+        {
+            ProblemCSV pe = new ProblemCSV(editingNode);
+            if (pe.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                branchEdited = true;    
+                saveOpenedBranch();
+                problemListView.SetObjects(editingNode.problems);         
+            }
+        }
+
         private void addProbButton_Click(object sender, EventArgs e)
         {
             try
             {
+                branchEdited = true;    
                 CategoryProblem cp = new CategoryProblem();
                 cp.setParent(editingNode);
                 editingNode.problems.Add(cp);
