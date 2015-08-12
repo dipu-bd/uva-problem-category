@@ -229,7 +229,7 @@ namespace CategoryEditor
                 string path = indexFolder();
                 if (!Directory.Exists(path)) return;
 
-                string json = JsonConvert.SerializeObject(allIndex, Formatting.Indented);
+                string json = JsonConvert.SerializeObject(allIndex, Formatting.None);
                 File.WriteAllText(indexBox.Text, json);
             }
             catch (Exception ex)
@@ -247,7 +247,7 @@ namespace CategoryEditor
 
             try
             {
-                string json = JsonConvert.SerializeObject(selectedBranch, Formatting.Indented);
+                string json = JsonConvert.SerializeObject(selectedBranch, Formatting.None);
                 File.WriteAllText(getCategoryFile(selectedIndex.file), json);
             }
             catch (Exception ex)
@@ -421,7 +421,7 @@ namespace CategoryEditor
             string fullName = getCategoryFile(catInd.file);
             if (!File.Exists(fullName))
             {
-                string json = JsonConvert.SerializeObject(new CategoryNode(name), Formatting.Indented);
+                string json = JsonConvert.SerializeObject(new CategoryNode(name), Formatting.None);
                 File.WriteAllText(fullName, json);
             }
 

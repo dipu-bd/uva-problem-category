@@ -786,7 +786,7 @@
             this.fastColoredTextBox1.AutoIndentChars = false;
             this.fastColoredTextBox1.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\n^\\s*(case|default)\\s*[^:]*(" +
     "?<range>:)\\s*(?<range>[^;]+);\n";
-            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(27, 15);
+            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(2, 15);
             this.fastColoredTextBox1.BackBrush = null;
             this.fastColoredTextBox1.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
             this.fastColoredTextBox1.CharHeight = 15;
